@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainfragment">
+
+    <fragment
+        android:id="@+id/mainfragment"
+        android:name="com.example.myproject.Mainfragment"
+        android:label="Mainfragment" >
+        <action
+            android:id="@+id/action_mainfragment_to_elementaryschoolmath"
+            app:destination="@id/elementaryschoolmath" />
+    </fragment>
+    <fragment
+        android:id="@+id/elementaryschoolmath"
+        android:name="com.example.myproject.elementaryschoolmath"
+        android:label="elementaryschoolmath"
+        tools:layout="@layout/elementaryschoolmath" />
+    <fragment
+        android:id="@+id/newfragment"
+        android:name="com.example.myproject.Newfragment"
+        android:label="fragment_newfragment"
+        tools:layout="@layout/fragment_newfragment" />
+</navigation>
