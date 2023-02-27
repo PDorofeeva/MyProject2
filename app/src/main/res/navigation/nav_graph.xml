@@ -15,12 +15,21 @@
     </fragment>
     <fragment
         android:id="@+id/elementaryschoolmath"
-        android:name="com.example.myproject.elementaryschoolmath"
+        android:name="com.example.myproject.ElementarySchoolMath"
         android:label="elementaryschoolmath"
-        tools:layout="@layout/elementaryschoolmath" />
+        tools:layout="@layout/elementaryschoolmath" >
+        <action
+            android:id="@+id/action_elementaryschoolmath_to_theoryandpractice"
+            app:destination="@id/theoryandpractice" />
+    </fragment>
     <fragment
         android:id="@+id/newfragment"
         android:name="com.example.myproject.Newfragment"
         android:label="fragment_newfragment"
         tools:layout="@layout/fragment_newfragment" />
+    <fragment
+        android:id="@+id/theoryandpractice"
+        android:name="com.example.myproject.theoryandpractice"
+        android:label="theoryandpractice"
+        tools:layout="@layout/theoryandpractice" />
 </navigation>

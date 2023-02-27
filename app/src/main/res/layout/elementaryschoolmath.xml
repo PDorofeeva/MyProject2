@@ -6,16 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#211400"
-    android:backgroundTint="#211400"
     android:foregroundTint="#00FFFFFF"
-    tools:context=".elementaryschoolmath">
+    tools:context=".ElementarySchoolMath">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#211400"
         android:backgroundTint="#211400"
-        tools:context=".elementaryschoolmath">
+        tools:context=".ElementarySchoolMath">
 
         <ImageView
             android:id="@+id/imageView"
@@ -41,28 +40,30 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/btnfirstform1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:src="@drawable/rectangle_9"
+                    android:text="Settings"
+                     />
+
+                <ImageButton
+                    android:id="@+id/btnfirstform2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
                     android:src="@drawable/rectangle_9" />
 
                 <ImageButton
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/btnfirstform3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
                     android:src="@drawable/rectangle_9" />
 
                 <ImageButton
-                    android:id="@+id/imageButton5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
-
-                <ImageButton
-                    android:id="@+id/imageButton6"
+                    android:id="@+id/btnfirstform4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
@@ -88,6 +89,7 @@
             android:layout_width="140dp"
             android:layout_height="30dp"
             android:layout_marginTop="4dp"
+            android:fontFamily="@font/secondfont"
             android:text="Выбери тему"
             android:textColor="#FFFFFF"
             android:textSize="21sp"
@@ -97,9 +99,10 @@
 
         <TextView
             android:id="@+id/textView7"
-            android:layout_width="281dp"
-            android:layout_height="45dp"
+            android:layout_width="291dp"
+            android:layout_height="49dp"
             android:layout_marginTop="52dp"
+            android:fontFamily="@font/secondfont"
             android:text="Начальная школа"
             android:textColor="#FFFFFF"
             android:textSize="32sp"
@@ -112,6 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
+            android:fontFamily="@font/secondfont"
             android:text="Назад"
             android:textColor="#000000"
             android:textSize="34sp"
@@ -145,9 +149,10 @@
 
         <TextView
             android:id="@+id/textView11"
-            android:layout_width="93dp"
-            android:layout_height="33dp"
+            android:layout_width="103dp"
+            android:layout_height="34dp"
             android:layout_marginStart="32dp"
+            android:fontFamily="@font/secondfont"
             android:text="1 Класс"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -158,10 +163,11 @@
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="93dp"
+            android:layout_width="100dp"
             android:layout_height="33dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
+            android:fontFamily="@font/secondfont"
             android:text="2 Класс"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -170,10 +176,11 @@
 
         <TextView
             android:id="@+id/textView14"
-            android:layout_width="93dp"
-            android:layout_height="33dp"
+            android:layout_width="97dp"
+            android:layout_height="34dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
+            android:fontFamily="@font/secondfont"
             android:text="3 Класс"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -206,14 +213,14 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/imageButton4"
+                    android:id="@+id/btnaddition"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
                     android:src="@drawable/rectangle_9" />
 
                 <ImageButton
-                    android:id="@+id/imageButton7"
+                    android:id="@+id/btnsubtraction"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
@@ -310,41 +317,38 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9"
-                    android:tint="#00FFFFFF" />
+                    android:src="@drawable/rectangle_9" />
 
                 <ImageButton
                     android:id="@+id/imageButton16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9"
-                    android:tint="#00FFFFFF" />
+                    android:src="@drawable/rectangle_9" />
 
                 <ImageButton
                     android:id="@+id/imageButton18"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9"
-                    android:tint="#00FFFFFF" />
+                    android:src="@drawable/rectangle_9" />
 
                 <ImageButton
                     android:id="@+id/imageButton20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9"
-                    android:tint="#00FFFFFF" />
+                    android:src="@drawable/rectangle_9" />
             </LinearLayout>
         </ScrollView>
 
         <TextView
             android:id="@+id/textView16"
-            android:layout_width="93dp"
+            android:layout_width="106dp"
             android:layout_height="33dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
+            android:fontFamily="@font/secondfont"
             android:text="4 Класс"
             android:textColor="#FFFFFF"
             android:textSize="24sp"

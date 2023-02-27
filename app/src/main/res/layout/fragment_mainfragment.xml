@@ -63,26 +63,26 @@
             app:srcCompat="@drawable/rectangle_28" />
 
         <ImageButton
-            android:id="@+id/imageButton03"
+            android:id="@+id/btnEnglish"
             android:layout_width="175dp"
             android:layout_height="158dp"
             android:layout_marginTop="192dp"
             android:backgroundTint="#00FFFFFF"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton04"
+            app:layout_constraintEnd_toStartOf="@+id/btnInformatics"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView04"
             app:srcCompat="@drawable/rectangle_28" />
 
         <ImageButton
-            android:id="@+id/imageButton04"
+            android:id="@+id/btnInformatics"
             android:layout_width="175dp"
             android:layout_height="158dp"
             android:layout_marginTop="192dp"
             android:backgroundTint="#00FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageButton03"
+            app:layout_constraintStart_toEndOf="@+id/btnEnglish"
             app:layout_constraintTop_toBottomOf="@+id/imageView04"
             app:srcCompat="@drawable/rectangle_28" />
 
@@ -93,7 +93,7 @@
             android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton03"
+            app:layout_constraintTop_toBottomOf="@+id/btnEnglish"
             app:srcCompat="@drawable/low_flowers" />
 
         <ImageButton
@@ -104,7 +104,7 @@
             android:layout_marginEnd="20dp"
             android:backgroundTint="#00FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton04"
+            app:layout_constraintTop_toBottomOf="@+id/btnInformatics"
             app:srcCompat="@drawable/rectangle_21" />
 
         <ImageView
@@ -145,12 +145,12 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="69dp"
-            android:layout_height="20dp"
+            android:layout_width="79dp"
+            android:layout_height="16dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="48dp"
-            android:text="@string/Calculate"
+            android:layout_marginEnd="40dp"
             android:fontFamily="@font/secondfont"
+            android:text="@string/Calculate"
             app:layout_constraintEnd_toEndOf="@+id/imageButton05"
             app:layout_constraintTop_toTopOf="@+id/imageButton05" />
 
@@ -213,7 +213,7 @@
             android:contentDescription="@string/Img" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/TextMath"
             android:layout_width="115dp"
             android:layout_height="68dp"
             android:layout_marginStart="28dp"
@@ -226,45 +226,34 @@
             app:layout_constraintStart_toStartOf="@+id/btnMath"
             app:layout_constraintTop_toTopOf="@+id/btnMath" />
 
-        <FrameLayout
-            android:id="@+id/frame1"
-            android:layout_width="408dp"
-            android:layout_height="1100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="0dp">
-
-        </FrameLayout>
-
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="145dp"
+            android:id="@+id/TextEnglish"
+            android:layout_width="147dp"
             android:layout_height="83dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="12dp"
             android:fontFamily="@font/secondfont"
             android:text="@string/English"
             android:textColor="#000000"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="@+id/btnRussian"
-            app:layout_constraintTop_toTopOf="@+id/btnRussian" />
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/btnEnglish"
+            app:layout_constraintTop_toTopOf="@+id/btnEnglish" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/TextRussian"
             android:layout_width="115dp"
             android:layout_height="68dp"
-            android:layout_marginStart="28dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="28dp"
             android:fontFamily="@font/secondfont"
             android:text="@string/RussianL"
             android:textColor="#000000"
             android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="@+id/imageButton03"
-            app:layout_constraintTop_toTopOf="@+id/imageButton03" />
+            app:layout_constraintEnd_toEndOf="@+id/btnRussian"
+            app:layout_constraintTop_toTopOf="@+id/btnRussian" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/TextInfornatics"
             android:layout_width="117dp"
             android:layout_height="68dp"
             android:layout_marginStart="28dp"
@@ -274,8 +263,8 @@
             android:textAlignment="textStart"
             android:textColor="#000000"
             android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="@+id/imageButton04"
-            app:layout_constraintTop_toTopOf="@+id/imageButton04" />
+            app:layout_constraintStart_toStartOf="@+id/btnInformatics"
+            app:layout_constraintTop_toTopOf="@+id/btnInformatics" />
 
         <Spinner
             android:id="@+id/spinner"

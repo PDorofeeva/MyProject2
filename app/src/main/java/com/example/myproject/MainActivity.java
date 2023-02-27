@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavHostController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
 import android.view.View;
@@ -14,14 +16,21 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
+import com.example.myproject.databinding.ActivityMainBinding;
 
+public class MainActivity extends AppCompatActivity{ //implements View.OnClickListener, AdapterView.OnItemSelectedListener{
 
+    private ActivityMainBinding binding;
     private ArrayAdapter<CharSequence> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        NavHostController navHostController = (NavHostController) navHostFragment.getNavController();
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
         /*btnMath = findViewById(R.id.btnMath);
         btnMath.setOnClickListener(this);
         Spinner spinner = findViewById(R.id.spinner);
@@ -30,10 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);*/
     }
-
+/*
     @Override
     public void onClick(View view) {
-        if(view.getId() == R.id.btnMath) loadFragment(new elementaryschoolmath());
+        if(view.getId() == R.id.btnMath) loadFragment(new ElementarySchoolMath());
     }
     private void loadFragment(Fragment fr){
         FragmentManager manager = getSupportFragmentManager();
@@ -51,4 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+ */
 }
