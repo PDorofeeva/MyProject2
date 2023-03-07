@@ -29,8 +29,6 @@ android {
     //added
     buildFeatures {
         dataBinding true
-    }
-    buildFeatures {
         viewBinding true
     }
 }
@@ -45,8 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
-    implementation 'androidx.databinding:baseLibrary:3.2.0-alpha11' //databinding
+    //implementation 'androidx.databinding:baseLibrary:3.2.0-alpha11' //databinding
     implementation "androidx.navigation:navigation-fragment:2.5.3"
     implementation "androidx.navigation:navigation-ui:2.5.3"
-    implementation 'com.google.android.material:material:1.8.0'
 }

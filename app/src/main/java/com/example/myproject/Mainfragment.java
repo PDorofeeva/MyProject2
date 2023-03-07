@@ -3,6 +3,7 @@ package com.example.myproject;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -18,6 +19,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.myproject.databinding.FragmentMainfragmentBinding;
+import com.example.myproject.model.OrderViewModel;
+
+import java.util.Objects;
 
 public class Mainfragment extends Fragment implements AdapterView.OnItemSelectedListener {//implements View.OnClickListener
     private ImageButton btnMath;
@@ -63,8 +67,9 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
         View view = inflater.inflate(R.layout.fragment_mainfragment, container, false);
         fragmentMainfragmentBinding = FragmentMainfragmentBinding.inflate(inflater, container, false);
         Spinner spinner = view.findViewById(R.id.spinner);
-        adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.grades, android.R.layout.simple_spinner_item);
+        adapter = ArrayAdapter.createFromResource(requireActivity().getApplicationContext(), R.array.grades, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        OrderViewModel orderViewModel = new ViewModelProvider(requireActivity()).get(OrderViewModel.class);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         return fragmentMainfragmentBinding.getRoot();

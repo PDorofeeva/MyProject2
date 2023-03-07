@@ -5,7 +5,7 @@
     android:background="#211400"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".theoryandpractice">
+    tools:context=".TheoryAndPractice">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -83,12 +83,12 @@
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/secondfont"
-            android:text="Практика"
+            android:text="Тест"
             android:textColor="#FFFFFF"
             android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageButton19"
             app:layout_constraintStart_toStartOf="@+id/imageButton19"
             app:layout_constraintTop_toTopOf="@+id/imageButton19" />
 

@@ -29,7 +29,11 @@
         tools:layout="@layout/fragment_newfragment" />
     <fragment
         android:id="@+id/theoryandpractice"
-        android:name="com.example.myproject.theoryandpractice"
+        android:name="com.example.myproject.TheoryAndPractice"
         android:label="theoryandpractice"
-        tools:layout="@layout/theoryandpractice" />
+        tools:layout="@layout/theoryandpractice" >
+        <action
+            android:id="@+id/action_theoryandpractice_to_newfragment"
+            app:destination="@id/newfragment" />
+    </fragment>
 </navigation>
