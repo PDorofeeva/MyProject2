@@ -25,12 +25,11 @@ public class MainActivity extends AppCompatActivity{ //implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-        NavHostController navHostController = (NavHostController) navHostFragment.getNavController();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        NavHostController navHostController = (NavHostController) navHostFragment.getNavController();
         /*btnMath = findViewById(R.id.btnMath);
         btnMath.setOnClickListener(this);
         Spinner spinner = findViewById(R.id.spinner);
