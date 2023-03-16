@@ -6,10 +6,11 @@
     <string name="Calculate">Вычислить</string>
     <string name="YourGrade">В каком ты классе?</string>
     <string name="Math">Математика</string>
-    <string name="English">Английский язык</string>
+    <string name="English">English</string>
     <string name="RussianL">Русский язык</string>
     <string name="Informatics">Информатика</string>
     <string name="Img">TODO</string>
+    <string name="settings">Settings</string>
     <string-array name="grades">
         <item>Младшая школа</item>
         <item>5</item>

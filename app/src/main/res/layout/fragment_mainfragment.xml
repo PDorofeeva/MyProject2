@@ -97,9 +97,9 @@
             app:srcCompat="@drawable/low_flowers" />
 
         <ImageButton
-            android:id="@+id/imageButton05"
-            android:layout_width="152dp"
-            android:layout_height="58dp"
+            android:id="@+id/btncount"
+            android:layout_width="159dp"
+            android:layout_height="62dp"
             android:layout_marginTop="56dp"
             android:layout_marginEnd="20dp"
             android:backgroundTint="#00FFFFFF"
@@ -151,8 +151,9 @@
             android:layout_marginEnd="40dp"
             android:fontFamily="@font/secondfont"
             android:text="@string/Calculate"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton05"
-            app:layout_constraintTop_toTopOf="@+id/imageButton05" />
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="@+id/btncount"
+            app:layout_constraintTop_toTopOf="@+id/btncount" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -264,9 +265,9 @@
 
         <TextView
             android:id="@+id/TextEnglish"
-            android:layout_width="147dp"
-            android:layout_height="83dp"
-            android:layout_marginStart="12dp"
+            android:layout_width="89dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="44dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/secondfont"
             android:text="@string/English"
@@ -316,15 +317,14 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="180dp"
-            android:layout_height="78dp"
+            android:layout_width="169dp"
+            android:layout_height="66dp"
             android:layout_marginTop="28dp"
-            android:layout_marginEnd="8dp"
             android:fontFamily="@font/secondfont"
-            android:text="Какая будет твоя оценка?"
+            android:text="Твой средний балл"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton05"
+            app:layout_constraintEnd_toStartOf="@+id/btncount"
             app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

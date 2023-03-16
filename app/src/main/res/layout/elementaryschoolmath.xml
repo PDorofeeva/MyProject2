@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
@@ -10,89 +10,97 @@
     tools:context=".ElementarySchoolMath">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#211400"
         android:backgroundTint="#211400"
-        tools:context=".ElementarySchoolMath">
+        app:layoutDescription="@xml/elementaryschoolmath_xml_constraintlayout_scene">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="408dp"
-            android:layout_height="708dp"
+            android:layout_width="365dp"
+            android:layout_height="745dp"
             android:layout_marginEnd="3dp"
             android:src="@drawable/elementary_math"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ScrollView
-            android:id="@+id/scrollView2"
-            android:layout_width="346dp"
-            android:layout_height="196dp"
-            android:layout_marginTop="16dp"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="338dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView10">
 
-            <LinearLayout
+            <Button
+                android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Счёт до 10"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/btnfirstform1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9"
-                    android:text="Settings"
-                     />
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Счёт от 10 до 99"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/btnfirstform2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="знаки +, -,  ="
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/btnfirstform3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="знаки х, :"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/btnfirstform4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
-
-            </LinearLayout>
-        </ScrollView>
+        </LinearLayout>
 
         <ImageButton
             android:id="@+id/btnMathBack"
             android:layout_width="334dp"
             android:layout_height="94dp"
-            android:layout_marginTop="84dp"
+            android:layout_marginTop="111dp"
             android:backgroundTint="#00FFFFFF"
             android:src="@drawable/rectangle_7"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.428"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView5" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="140dp"
-            android:layout_height="30dp"
+            android:layout_width="168dp"
+            android:layout_height="31dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/secondfont"
-            android:text="Выбери тему"
+            android:text="Выберите тему"
             android:textColor="#FFFFFF"
             android:textSize="21sp"
             app:layout_constraintEnd_toEndOf="@+id/textView7"
@@ -141,19 +149,19 @@
             android:id="@+id/textView15"
             android:layout_width="349dp"
             android:layout_height="18dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="1dp"
             android:text="_____________________________________________________"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintHorizontal_bias="0.532"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="103dp"
             android:layout_height="34dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="25dp"
             android:fontFamily="@font/secondfont"
             android:text="1 Класс"
             android:textColor="#FFFFFF"
@@ -167,195 +175,227 @@
             android:id="@+id/textView12"
             android:layout_width="100dp"
             android:layout_height="33dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="332dp"
             android:fontFamily="@font/secondfont"
             android:text="2 Класс"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="97dp"
             android:layout_height="34dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="332dp"
             android:fontFamily="@font/secondfont"
             android:text="3 Класс"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="349dp"
             android:layout_height="18dp"
-            android:layout_marginTop="60dp"
             android:text="_____________________________________________________"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.532"
+            app:layout_constraintHorizontal_bias="0.467"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
-        <ScrollView
-            android:id="@+id/scrollView3"
-            android:layout_width="346dp"
-            android:layout_height="196dp"
+        <LinearLayout
+            android:layout_width="345dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13">
+            app:layout_constraintTop_toTopOf="@+id/textView13">
 
-            <LinearLayout
+            <Button
+                android:id="@+id/btnaddition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Сложение"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/btnaddition"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Вычитание"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/btnsubtraction"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Умножение"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Деление"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/imageButton9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
-            </LinearLayout>
-        </ScrollView>
-
-        <ScrollView
-            android:id="@+id/scrollView4"
-            android:layout_width="346dp"
-            android:layout_height="196dp"
+        <LinearLayout
+            android:layout_width="345dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15">
+            app:layout_constraintTop_toBottomOf="@+id/textView14">
 
-            <LinearLayout
+            <Button
+                android:id="@+id/button9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
+            <Button
+                android:id="@+id/button18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
+            <Button
+                android:id="@+id/button16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton13"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
-            </LinearLayout>
-        </ScrollView>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="349dp"
             android:layout_height="18dp"
-            android:layout_marginTop="52dp"
             android:text="_____________________________________________________"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView4" />
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
-        <ScrollView
-            android:id="@+id/scrollView5"
-            android:layout_width="346dp"
-            android:layout_height="196dp"
-            android:layout_marginTop="24dp"
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="345dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView17">
+            app:layout_constraintTop_toBottomOf="@+id/textView16">
 
-            <LinearLayout
+            <Button
+                android:id="@+id/button20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton15"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
+            <Button
+                android:id="@+id/button26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton16"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
+            <Button
+                android:id="@+id/button24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton18"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
-
-                <ImageButton
-                    android:id="@+id/imageButton20"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/rectangle_9" />
-            </LinearLayout>
-        </ScrollView>
+            <Button
+                android:id="@+id/button21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="106dp"
             android:layout_height="33dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="372dp"
             android:fontFamily="@font/secondfont"
             android:text="4 Класс"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView4" />
+            app:layout_constraintTop_toTopOf="@+id/textView14" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

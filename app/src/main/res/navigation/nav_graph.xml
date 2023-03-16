@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_mainfragment_to_elementaryschoolmath"
             app:destination="@id/elementaryschoolmath" />
+        <action
+            android:id="@+id/action_mainfragment_to_averageScore"
+            app:destination="@id/averageScore" />
     </fragment>
     <fragment
         android:id="@+id/elementaryschoolmath"
@@ -21,12 +24,15 @@
         <action
             android:id="@+id/action_elementaryschoolmath_to_theoryandpractice"
             app:destination="@id/theoryandpractice" />
+        <action
+            android:id="@+id/action_elementaryschoolmath_to_mainfragment"
+            app:destination="@id/mainfragment" />
     </fragment>
     <fragment
         android:id="@+id/newfragment"
-        android:name="com.example.myproject.Newfragment"
+        android:name="com.example.myproject.Practice"
         android:label="fragment_newfragment"
-        tools:layout="@layout/fragment_newfragment" />
+        tools:layout="@layout/fragment_practice" />
     <fragment
         android:id="@+id/theoryandpractice"
         android:name="com.example.myproject.TheoryAndPractice"
@@ -35,5 +41,22 @@
         <action
             android:id="@+id/action_theoryandpractice_to_newfragment"
             app:destination="@id/newfragment" />
+        <action
+            android:id="@+id/action_theoryandpractice_to_elementaryschoolmath"
+            app:destination="@id/elementaryschoolmath" />
     </fragment>
+    <fragment
+        android:id="@+id/averageScore"
+        android:name="com.example.myproject.AverageScore"
+        android:label="fragment_average_score"
+        tools:layout="@layout/fragment_average_score" >
+        <action
+            android:id="@+id/action_averageScore_to_scoreAnswer"
+            app:destination="@id/scoreAnswer" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreAnswer"
+        android:name="com.example.myproject.ScoreAnswer"
+        android:label="fragment_score_answer"
+        tools:layout="@layout/fragment_score_answer" />
 </navigation>

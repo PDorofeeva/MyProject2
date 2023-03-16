@@ -2,11 +2,16 @@ package com.example.myproject;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.myproject.databinding.TheoryandpracticeBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,9 +19,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class TheoryAndPractice extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    TheoryandpracticeBinding theoryandpracticeBinding;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -56,9 +59,28 @@ public class TheoryAndPractice extends Fragment {
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        theoryandpracticeBinding.btnTheory.setOnClickListener(view1 -> goToNextScreen());
+        theoryandpracticeBinding.theoryAndPracticeBack.setOnClickListener(view2 -> goToBackScreen());
+    }
+    public void goToNextScreen() {
+        Navigation.findNavController(requireView()).navigate(R.id.action_theoryandpractice_to_newfragment);
+    }
+    public void goToBackScreen() {
+        Navigation.findNavController(requireView()).navigate(R.id.action_theoryandpractice_to_elementaryschoolmath);
+    }
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        theoryandpracticeBinding = TheoryandpracticeBinding.inflate(inflater, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.theoryandpractice, container, false);
+        return theoryandpracticeBinding.getRoot();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        theoryandpracticeBinding = null;
     }
 }

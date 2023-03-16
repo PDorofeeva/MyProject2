@@ -36,9 +36,13 @@ public class ElementarySchoolMath extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         elementaryschoolmathBinding.btnaddition.setOnClickListener(view1 -> goToNextScreen());
+        elementaryschoolmathBinding.btnMathBack.setOnClickListener(view2 -> goToBackScreen());
     }
     public void goToNextScreen() {
         Navigation.findNavController(requireView()).navigate(R.id.action_elementaryschoolmath_to_theoryandpractice);
+    }
+    public void goToBackScreen() {
+        Navigation.findNavController(requireView()).navigate(R.id.action_elementaryschoolmath_to_mainfragment);
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,7 @@ public class ElementarySchoolMath extends Fragment {
         // Inflate the layout for this fragment
         return elementaryschoolmathBinding.getRoot();
     }
+
 
     @Override
     public void onDestroyView() {

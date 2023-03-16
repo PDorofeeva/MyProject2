@@ -24,32 +24,7 @@ import com.example.myproject.model.OrderViewModel;
 import java.util.Objects;
 
 public class Mainfragment extends Fragment implements AdapterView.OnItemSelectedListener {//implements View.OnClickListener
-    private ImageButton btnMath;
     private ArrayAdapter<CharSequence> adapter;
-    /*private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String mParam1;
-    private String mParam2;
-    private FragmentMainfragmentBinding binding; //why?
-
-    public static Mainfragment newInstance(String param1, String param2) {
-        Mainfragment fragment = new Mainfragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-        }
-     */
     private FragmentMainfragmentBinding fragmentMainfragmentBinding;
 
 
@@ -83,16 +58,22 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
         } //(new ElementarySchoolMath());
     }
      */
-    public void Buttons(){ //This method must do smth
-        Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_elementaryschoolmath);
+    public void Buttons(int number){ //This method must do smth
+        if(number == 1){
+            Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_elementaryschoolmath);
+        } else if (number == 5) {
+            Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_averageScore);
+
+        }
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        fragmentMainfragmentBinding.btnMath.setOnClickListener(view1 -> Buttons());
-        fragmentMainfragmentBinding.btnRussian.setOnClickListener(view2 -> Buttons());
-        fragmentMainfragmentBinding.btnEnglish.setOnClickListener(view3 -> Buttons());
-        fragmentMainfragmentBinding.btnInformatics.setOnClickListener(view4 -> Buttons());
+        fragmentMainfragmentBinding.btnMath.setOnClickListener(view1 -> Buttons(1));
+        fragmentMainfragmentBinding.btnRussian.setOnClickListener(view2 -> Buttons(0));
+        fragmentMainfragmentBinding.btnEnglish.setOnClickListener(view3 -> Buttons(0));
+        fragmentMainfragmentBinding.btnInformatics.setOnClickListener(view4 -> Buttons(0));
+        fragmentMainfragmentBinding.btncount.setOnClickListener(view5 -> Buttons(5));
     }
 
     @Override
