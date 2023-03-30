@@ -34,15 +34,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="358dp"
-            android:layout_height="222dp"
-            android:src="@drawable/rectangle_32"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
         <TextView
             android:id="@+id/textView9"
             android:layout_width="326dp"
@@ -56,19 +47,6 @@
             app:layout_constraintStart_toStartOf="@+id/imageView6"
             app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="342dp"
-            android:layout_height="92dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/secondfont"
-            android:text="Введите свои оценки "
-            android:textColor="#000000"
-            android:textSize="38sp"
-            app:layout_constraintStart_toStartOf="@+id/imageView10"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="313dp"
@@ -78,16 +56,6 @@
             android:src="@drawable/rectangle_33"
             app:layout_constraintStart_toStartOf="@+id/imageView6"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="313dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="28dp"
-            android:src="@drawable/rectangle_33"
-            app:layout_constraintStart_toStartOf="@+id/imageView10"
-            app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
         <EditText
             android:id="@+id/editTextNumberDecimal"
@@ -100,28 +68,17 @@
             app:layout_constraintStart_toStartOf="@+id/imageView7"
             app:layout_constraintTop_toTopOf="@+id/imageView7" />
 
-        <EditText
-            android:id="@+id/editTextNumberDecimal2"
-            android:layout_width="301dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
-            app:layout_constraintEnd_toEndOf="@+id/imageView11"
-            app:layout_constraintStart_toStartOf="@+id/imageView11"
-            app:layout_constraintTop_toTopOf="@+id/imageView11" />
-
         <ImageButton
             android:id="@+id/btncount2"
             android:layout_width="357dp"
             android:layout_height="100dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="86dp"
             android:backgroundTint="#00FFFFFF"
             android:src="@drawable/rectangle_34"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
         <TextView
             android:id="@+id/textView27"
@@ -136,6 +93,90 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="@+id/btncount2"
             app:layout_constraintTop_toTopOf="@+id/btncount2" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle_32__2_"
+            app:layout_constraintStart_toStartOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="155dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/rectangle_31__1_"
+            app:layout_constraintEnd_toEndOf="@+id/imageView6"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="23dp"
+            android:src="@drawable/rectangle_48"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+            app:layout_constraintEnd_toEndOf="@+id/imageView8"
+            app:layout_constraintStart_toStartOf="@+id/imageView8" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="134dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="23dp"
+            android:src="@drawable/rectangle_49"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+            app:layout_constraintEnd_toEndOf="@+id/imageView10"
+            app:layout_constraintStart_toStartOf="@+id/imageView10" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="167dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/secondfont"
+            android:text="Текущий балл:"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="141dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/secondfont"
+            android:text="Количество оценок:"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView10"
+            app:layout_constraintTop_toTopOf="@+id/imageView10" />
+
+        <EditText
+            android:id="@+id/editTextNumberDecimal2"
+            android:layout_width="152dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintStart_toStartOf="@+id/imageView11" />
+
+        <EditText
+            android:id="@+id/editTextNumberSigned"
+            android:layout_width="127dp"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView18"
+            app:layout_constraintEnd_toEndOf="@+id/imageView18"
+            app:layout_constraintStart_toStartOf="@+id/imageView18" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

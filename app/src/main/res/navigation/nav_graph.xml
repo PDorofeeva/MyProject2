@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_mainfragment_to_averageScore"
             app:destination="@id/averageScore" />
+        <action
+            android:id="@+id/action_mainfragment_to_historyOfScore"
+            app:destination="@id/historyOfScore" />
     </fragment>
     <fragment
         android:id="@+id/elementaryschoolmath"
@@ -58,5 +61,18 @@
         android:id="@+id/scoreAnswer"
         android:name="com.example.myproject.ScoreAnswer"
         android:label="fragment_score_answer"
-        tools:layout="@layout/fragment_score_answer" />
+        tools:layout="@layout/fragment_score_answer" >
+        <action
+            android:id="@+id/action_scoreAnswer_to_historyOfScore"
+            app:destination="@id/historyOfScore" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyOfScore"
+        android:name="com.example.myproject.HistoryOfScore"
+        android:label="fragment_history_of_score"
+        tools:layout="@layout/fragment_history_of_score" >
+        <action
+            android:id="@+id/action_historyOfScore_to_mainfragment"
+            app:destination="@id/mainfragment" />
+    </fragment>
 </navigation>

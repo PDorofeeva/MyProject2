@@ -1,5 +1,6 @@
 package com.example.myproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,16 +11,13 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.myproject.databinding.ElementaryschoolmathBinding;
 import com.example.myproject.databinding.FragmentAverageScoreBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AverageScore#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class AverageScore extends Fragment {
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -32,14 +30,6 @@ public class AverageScore extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AverageScore.
-     */
     // TODO: Rename and change types and number of parameters
     public static AverageScore newInstance(String param1, String param2) {
         AverageScore fragment = new AverageScore();
@@ -57,11 +47,24 @@ public class AverageScore extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-    }
 
+        double CurrentAverageScore = Double.parseDouble(String.valueOf(R.id.editTextNumberDecimal2));
+        double NewAverageScore = Double.parseDouble(String.valueOf(R.id.editTextNumberDecimal));
+        int quantity = Integer.parseInt(String.valueOf(R.id.editTextNumberSigned));
+        //ForAverageScore result = new ForAverageScore(CurrentAverageScore, NewAverageScore, quantity);
+        //int result2 = Integer.parseInt(String.valueOf(result));
+        /*
+        Bundle args = new Bundle();
+        args.putInt("1", result2);
+        ScoreAnswer newFragment = new ScoreAnswer ();
+        newFragment.setArguments(args);
+
+         */
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         fragmentAverageScoreBinding = FragmentAverageScoreBinding.inflate(inflater, container, false);
         // Inflate the layout for this fragment
         return fragmentAverageScoreBinding.getRoot();

@@ -21,21 +21,96 @@
             android:id="@+id/imageView03"
             android:layout_width="341dp"
             android:layout_height="203dp"
-            android:layout_marginTop="292dp"
+            android:layout_marginTop="268dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/rectangle_18" />
 
+        <TextView
+            android:id="@+id/textView90"
+            android:layout_width="210dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="120dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/secondfont"
+            android:foregroundTint="#00FFFFFF"
+            android:text="@string/HowAreYou"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView03"
+            app:layout_constraintTop_toTopOf="@+id/imageView03" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/horizontalScrollView"
+            app:layout_constraintStart_toStartOf="@+id/imageView03"
+            app:srcCompat="@drawable/rectangle_32__1_" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="339dp"
+            android:layout_height="104dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView03"
+            app:layout_constraintEnd_toEndOf="@+id/imageView03"
+            app:layout_constraintStart_toStartOf="@+id/imageView03">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:srcCompat="@drawable/redsmile__1_" />
+
+                <ImageButton
+                    android:id="@+id/imageButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:srcCompat="@drawable/orangesmile__1_" />
+
+                <ImageButton
+                    android:id="@+id/imageButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:srcCompat="@drawable/greensmile__1_" />
+
+                <ImageButton
+                    android:id="@+id/imageButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:srcCompat="@drawable/purplesmile__1_" />
+
+                <ImageButton
+                    android:id="@+id/imageButton14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:srcCompat="@drawable/bluesmile__1_" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
         <ImageView
             android:id="@+id/imageView04"
             android:layout_width="340dp"
             android:layout_height="104dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="7dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView03"
+            app:layout_constraintTop_toBottomOf="@+id/btnresultcount"
             app:srcCompat="@drawable/rectangle_2" />
 
         <ImageButton
@@ -117,31 +192,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/high_flowers" />
 
-        <TextView
-            android:id="@+id/textView90"
-            android:layout_width="210dp"
-            android:layout_height="67dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="120dp"
-            android:backgroundTint="#000000"
-            android:fontFamily="@font/secondfont"
-            android:foregroundTint="#00FFFFFF"
-            android:text="@string/HowAreYou"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView03"
-            app:layout_constraintTop_toTopOf="@+id/imageView03" />
-
-        <ImageView
-            android:id="@+id/imageView01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="6dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/rectangle_29" />
 
         <TextView
             android:id="@+id/textView2"
@@ -165,77 +215,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ellipse_9__1_" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView03"
-            app:layout_constraintStart_toStartOf="@+id/imageView03"
-            app:srcCompat="@drawable/rectangle_31" />
-
-        <HorizontalScrollView
-            android:layout_width="339dp"
-            android:layout_height="104dp"
-            android:layout_marginBottom="7dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView03"
-            app:layout_constraintEnd_toEndOf="@+id/imageView03"
-            app:layout_constraintStart_toStartOf="@+id/imageView03">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <ImageButton
-                    android:id="@+id/imageButton22"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:srcCompat="@drawable/redsmile__1_" />
-
-                <ImageButton
-                    android:id="@+id/imageButton7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:srcCompat="@drawable/orangesmile__1_" />
-
-                <ImageButton
-                    android:id="@+id/imageButton6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:srcCompat="@drawable/greensmile__1_" />
-
-                <ImageButton
-                    android:id="@+id/imageButton4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:srcCompat="@drawable/purplesmile__1_" />
-
-                <ImageButton
-                    android:id="@+id/imageButton14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:srcCompat="@drawable/bluesmile__1_" />
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="202dp"
             android:layout_height="64dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="4dp"
             android:fontFamily="@font/secondfont"
             android:text="@string/YourGrade"
             android:textColor="#000000"
-            android:textSize="24sp"
+            android:textSize="26sp"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
-            app:layout_constraintTop_toBottomOf="@+id/imageView03" />
+            app:layout_constraintTop_toTopOf="@+id/imageView04" />
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -244,10 +235,10 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="12dp"
             android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/Img"
             app:layout_constraintEnd_toEndOf="@+id/imageView04"
             app:layout_constraintTop_toTopOf="@+id/imageView04"
-            app:srcCompat="@drawable/group_1"
-            android:contentDescription="@string/Img" />
+            app:srcCompat="@drawable/group_1" />
 
         <TextView
             android:id="@+id/TextMath"
@@ -265,9 +256,9 @@
 
         <TextView
             android:id="@+id/TextEnglish"
-            android:layout_width="89dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="44dp"
+            android:layout_width="124dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/secondfont"
             android:text="@string/English"
@@ -281,7 +272,7 @@
             android:layout_width="115dp"
             android:layout_height="68dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="28dp"
+            android:layout_marginEnd="32dp"
             android:fontFamily="@font/secondfont"
             android:text="@string/RussianL"
             android:textColor="#000000"
@@ -326,6 +317,102 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/btncount"
             app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+        <ImageButton
+            android:id="@+id/btnresultcount"
+            android:layout_width="396dp"
+            android:layout_height="63dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView03"
+            app:srcCompat="@drawable/rectangle123" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/secondfont"
+            android:text="Мой средний балл"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnresultcount"
+            app:layout_constraintStart_toStartOf="@+id/btnresultcount"
+            app:layout_constraintTop_toBottomOf="@+id/imageView03" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton16"
+            android:layout_width="82dp"
+            android:layout_height="70dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView4"
+            app:srcCompat="@drawable/rectangle_31" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton16"
+            app:layout_constraintEnd_toEndOf="@+id/imageButton16"
+            app:layout_constraintStart_toStartOf="@+id/imageButton16"
+            app:layout_constraintTop_toTopOf="@+id/imageButton16"
+            app:srcCompat="@drawable/settings1" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="75dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/btnInformatics"
+            app:layout_constraintTop_toTopOf="@+id/TextInfornatics"
+            app:srcCompat="@drawable/informatics" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="75dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/btnRussian"
+            app:layout_constraintTop_toTopOf="@+id/TextRussian"
+            app:srcCompat="@drawable/russian" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="85dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/btnMath"
+            app:layout_constraintTop_toTopOf="@+id/TextMath"
+            app:srcCompat="@drawable/board" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="78dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/btnEnglish"
+            app:layout_constraintTop_toTopOf="@+id/TextEnglish"
+            app:srcCompat="@drawable/globus" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="395dp"
+            android:layout_height="22dp"
+            android:text="_____________________________________________________________"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

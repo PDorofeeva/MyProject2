@@ -64,16 +64,19 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
         } else if (number == 5) {
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_averageScore);
 
+        } else if (number == 6) {
+            Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_historyOfScore);
         }
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fragmentMainfragmentBinding.btnMath.setOnClickListener(view1 -> Buttons(1));
-        fragmentMainfragmentBinding.btnRussian.setOnClickListener(view2 -> Buttons(0));
-        fragmentMainfragmentBinding.btnEnglish.setOnClickListener(view3 -> Buttons(0));
-        fragmentMainfragmentBinding.btnInformatics.setOnClickListener(view4 -> Buttons(0));
+        fragmentMainfragmentBinding.btnRussian.setOnClickListener(view2 -> Buttons(2));
+        fragmentMainfragmentBinding.btnEnglish.setOnClickListener(view3 -> Buttons(3));
+        fragmentMainfragmentBinding.btnInformatics.setOnClickListener(view4 -> Buttons(4));
         fragmentMainfragmentBinding.btncount.setOnClickListener(view5 -> Buttons(5));
+        fragmentMainfragmentBinding.btnresultcount.setOnClickListener(view6 -> Buttons(6));
     }
 
     @Override

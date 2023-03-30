@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity{ //implements View.OnClickLi
         setContentView(view);
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         NavHostController navHostController = (NavHostController) navHostFragment.getNavController();
-        /*btnMath = findViewById(R.id.btnMath);
+
+        /*
         btnMath.setOnClickListener(this);
         Spinner spinner = findViewById(R.id.spinner);
         adapter = ArrayAdapter.createFromResource(this, R.array.grades, android.R.layout.simple_spinner_item);

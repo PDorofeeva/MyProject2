@@ -4,9 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="HowAreYou">Как прошёл день?</string>
     <string name="Calculate">Вычислить</string>
-    <string name="YourGrade">В каком ты классе?</string>
+    <string name="YourGrade">В каком вы классе?</string>
     <string name="Math">Математика</string>
-    <string name="English">English</string>
+    <string name="English">English Language</string>
     <string name="RussianL">Русский язык</string>
     <string name="Informatics">Информатика</string>
     <string name="Img">TODO</string>
@@ -18,5 +18,11 @@
         <item>7</item>
         <item>8</item>
         <item>9</item>
+    </string-array>
+    <string-array name="subjects">
+        <item>Математика</item>
+        <item>Информатика</item>
+        <item>Английский язык</item>
+        <item>Русский язык</item>
     </string-array>
 </resources>
