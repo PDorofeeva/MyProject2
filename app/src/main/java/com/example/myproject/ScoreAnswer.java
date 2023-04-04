@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class ScoreAnswer extends Fragment {
-    //public TextView txt;
+    public TextView txt;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -38,13 +38,12 @@ public class ScoreAnswer extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        /*
+
         txt = txt.findViewById(R.id.txtforanswer);
         Bundle b = getArguments();
         int s = b.getInt("1");
         txt.setText(s);
 
-         */
     }
 
     @Override

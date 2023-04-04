@@ -51,21 +51,20 @@ public class AverageScore extends Fragment {
         double CurrentAverageScore = Double.parseDouble(String.valueOf(R.id.editTextNumberDecimal2));
         double NewAverageScore = Double.parseDouble(String.valueOf(R.id.editTextNumberDecimal));
         int quantity = Integer.parseInt(String.valueOf(R.id.editTextNumberSigned));
-        //ForAverageScore result = new ForAverageScore(CurrentAverageScore, NewAverageScore, quantity);
-        //int result2 = Integer.parseInt(String.valueOf(result));
-        /*
-        Bundle args = new Bundle();
-        args.putInt("1", result2);
-        ScoreAnswer newFragment = new ScoreAnswer ();
-        newFragment.setArguments(args);
+        ForAverageScore result = new ForAverageScore(CurrentAverageScore, NewAverageScore, quantity);
+        int result2 = Integer.parseInt(String.valueOf(result));
 
-         */
+
+
+
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //View view =
 
         fragmentAverageScoreBinding = FragmentAverageScoreBinding.inflate(inflater, container, false);
+
         // Inflate the layout for this fragment
         return fragmentAverageScoreBinding.getRoot();
     }
