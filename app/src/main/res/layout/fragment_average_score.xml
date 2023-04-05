@@ -1,11 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AverageScore">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.myproject.model.OrderViewModel" />
+    </data>
+    <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/final_grade"
-    tools:context=".AverageScore">
+    android:background="@drawable/final_grade">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -139,7 +144,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/secondfont"
-            android:text="Текущий балл:"
+            android:text="@{viewModel.avgscore.toString()}"
             android:textColor="#000000"
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="@+id/imageView8"
@@ -179,5 +184,5 @@
             app:layout_constraintStart_toStartOf="@+id/imageView18" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+    </ScrollView>
+</layout>
