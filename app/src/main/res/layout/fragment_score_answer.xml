@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ScoreAnswer">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.myproject.model.OrderViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -75,9 +81,10 @@
                 android:id="@+id/txtforanswer"
                 android:layout_width="59dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="148dp"
-                android:text="*"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="145dp"
+                android:fontFamily="@font/secondfont"
+                android:text="@{viewModel.avgscore.toString()}"
                 android:textColor="#FFFFFF"
                 android:textSize="40sp"
                 app:layout_constraintStart_toEndOf="@+id/textView26"

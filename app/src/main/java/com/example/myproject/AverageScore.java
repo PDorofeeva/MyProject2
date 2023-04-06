@@ -12,15 +12,21 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
 import com.example.myproject.databinding.FragmentAverageScoreBinding;
 import com.example.myproject.model.OrderViewModel;
 
-public class AverageScore extends Fragment {
+import java.util.Objects;
 
+public class AverageScore extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    public EditText editTextint;
+    public EditText editTextdbl1;
+    public EditText editTextdbl2;
     private String mParam1;
     private String mParam2;
 
@@ -56,6 +62,8 @@ public class AverageScore extends Fragment {
         orderViewModel = new ViewModelProvider(requireActivity()).get(OrderViewModel.class);
         fragmentAverageScoreBinding.setViewModel(orderViewModel);
         fragmentAverageScoreBinding.setLifecycleOwner(this);
+
+
         return fragmentAverageScoreBinding.getRoot();
     }
 
@@ -63,6 +71,9 @@ public class AverageScore extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fragmentAverageScoreBinding.btncount2.setOnClickListener(view1 -> Buttons());
+        editTextint= view.findViewById(R.id.editTextNumberSigned);
+        editTextdbl1 = view.findViewById(R.id.editTextNumberDecimal);
+        editTextdbl2 = view.findViewById(R.id.editTextNumberDecimal2);
     }
 
     @Override
@@ -70,14 +81,32 @@ public class AverageScore extends Fragment {
         super.onDestroyView();
         fragmentAverageScoreBinding = null;
     }
+    public static int Answer(int quantity, double NewAverageScore, double result){
+        int five = 0;
+        double current = result/quantity; // CurrentAverageScore
+        if (current>=NewAverageScore){
+
+        } else {
+            while (current < NewAverageScore) {
+                result += 5;
+                five++;
+                quantity++;
+                current = result / quantity;
+            }
+        }
+        return five;
+
+    }
+
 
     public void Buttons(){
-        double CurrentAverageScore = Double.parseDouble(String.valueOf(R.id.editTextNumberDecimal2));
-        double NewAverageScore = Double.parseDouble(String.valueOf(R.id.editTextNumberDecimal));
-        int quantity = Integer.parseInt(String.valueOf(R.id.editTextNumberSigned));
-        ForAverageScore result = new ForAverageScore(CurrentAverageScore, NewAverageScore, quantity);
-        Log.d("RRR",result.CurrentAverageScore+"");
-        orderViewModel.set_avgscore(result.CurrentAverageScore);
-       // Navigation.findNavController(requireView()).navigate(R.id.action_averageScore_to_scoreAnswer);
+        double NewAverageScore = Double.parseDouble(editTextdbl1.getText().toString());
+        double CurrentAverageScore = Double.parseDouble(editTextdbl2.getText().toString());
+        int quantity = Integer.parseInt(editTextint.getText().toString());
+        double result = quantity*CurrentAverageScore;
+        int result2 = Answer(quantity, NewAverageScore, result);
+        Log.d("RRR",result2+"");
+        orderViewModel.set_avgscore(result2);
+        Navigation.findNavController(requireView()).navigate(R.id.action_averageScore_to_scoreAnswer);//Necessary text
     }
 }

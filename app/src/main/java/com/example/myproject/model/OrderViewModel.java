@@ -5,10 +5,10 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class OrderViewModel extends ViewModel {
-    private MutableLiveData<Double> _avgscore = new MutableLiveData<>(0.0);// для Model
-    public LiveData<Double> avgscore  = _avgscore; // для View
+    private MutableLiveData<Integer> _avgscore = new MutableLiveData<>(1);// для Model
+    public LiveData<Integer> avgscore  = _avgscore; // для View
 
-    public void set_avgscore(double _score) {
+    public void set_avgscore(int _score) {
         this._avgscore.setValue(_score);
     }
 }

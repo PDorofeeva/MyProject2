@@ -144,7 +144,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/secondfont"
-            android:text="@{viewModel.avgscore.toString()}"
+            android:text="Текущий балл:"
             android:textColor="#000000"
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="@+id/imageView8"
