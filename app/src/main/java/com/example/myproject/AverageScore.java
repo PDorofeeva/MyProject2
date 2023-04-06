@@ -107,6 +107,6 @@ public class AverageScore extends Fragment {
         int result2 = Answer(quantity, NewAverageScore, result);
         Log.d("RRR",result2+"");
         orderViewModel.set_avgscore(result2);
-        Navigation.findNavController(requireView()).navigate(R.id.action_averageScore_to_scoreAnswer);//Necessary text
+        Navigation.findNavController(requireView()).navigate(R.id.action_averageScore_to_scoreAnswer);
     }
 }
