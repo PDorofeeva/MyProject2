@@ -49,7 +49,7 @@ public class ScoreAnswer extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-//pdct.1.1.20230406T133711Z.13e82af190600236.8d14e3e11e16383c8e446125ee47f705544b2e8f
+
 
     }
 
