@@ -2,9 +2,12 @@ package com.example.myproject;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,10 +21,9 @@ import com.example.myproject.model.OrderViewModel;
 
 public class ScoreAnswer extends Fragment {
 
-    TextView txt;
+    public FragmentScoreAnswerBinding fragmentScoreAnswerBinding;
     private OrderViewModel orderViewModel;
 
-    public FragmentScoreAnswerBinding fragmentScoreAnswerBinding;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -61,10 +63,17 @@ public class ScoreAnswer extends Fragment {
         fragmentScoreAnswerBinding.setViewModel(orderViewModel);
         fragmentScoreAnswerBinding.setLifecycleOwner(this);
         //Log.d("RRR",number+"");
-        //orderViewModel.set_avgscore(number);
         // Inflate the layout for this fragment
         return fragmentScoreAnswerBinding.getRoot();
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        fragmentScoreAnswerBinding.imageButton5.setOnClickListener(view2 ->  goToBackScreen());
+    }
 
+    public void goToBackScreen() {
+        Navigation.findNavController(requireView()).navigate(R.id.action_scoreAnswer_to_mainfragment);
+    }
 }

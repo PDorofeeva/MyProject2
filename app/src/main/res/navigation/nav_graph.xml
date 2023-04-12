@@ -35,7 +35,14 @@
         android:id="@+id/newfragment"
         android:name="com.example.myproject.Practice"
         android:label="fragment_newfragment"
-        tools:layout="@layout/fragment_practice" />
+        tools:layout="@layout/fragment_practice1" >
+        <action
+            android:id="@+id/action_newfragment_to_mathTestResult"
+            app:destination="@id/mathTestResult" />
+        <action
+            android:id="@+id/action_newfragment_to_mainfragment"
+            app:destination="@id/mainfragment" />
+    </fragment>
     <fragment
         android:id="@+id/theoryandpractice"
         android:name="com.example.myproject.TheoryAndPractice"
@@ -65,6 +72,9 @@
         <action
             android:id="@+id/action_scoreAnswer_to_historyOfScore"
             app:destination="@id/historyOfScore" />
+        <action
+            android:id="@+id/action_scoreAnswer_to_mainfragment"
+            app:destination="@id/mainfragment" />
     </fragment>
     <fragment
         android:id="@+id/historyOfScore"
@@ -73,6 +83,15 @@
         tools:layout="@layout/fragment_history_of_score" >
         <action
             android:id="@+id/action_historyOfScore_to_mainfragment"
+            app:destination="@id/mainfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mathTestResult"
+        android:name="com.example.myproject.MathTestResult"
+        android:label="fragment_math_test_result"
+        tools:layout="@layout/fragment_math_test_result" >
+        <action
+            android:id="@+id/action_mathTestResult_to_mainfragment"
             app:destination="@id/mainfragment" />
     </fragment>
 </navigation>

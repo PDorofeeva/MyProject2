@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myproject.databinding.FragmentAverageScoreBinding;
 import com.example.myproject.model.OrderViewModel;
@@ -22,14 +23,9 @@ import com.example.myproject.model.OrderViewModel;
 import java.util.Objects;
 
 public class AverageScore extends Fragment {
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     public EditText editTextint;
     public EditText editTextdbl1;
     public EditText editTextdbl2;
-    private String mParam1;
-    private String mParam2;
-
     private FragmentAverageScoreBinding fragmentAverageScoreBinding;
     private OrderViewModel orderViewModel;
 
@@ -37,23 +33,10 @@ public class AverageScore extends Fragment {
         // Required empty public constructor
     }
 
-    // TODO: Rename and change types and number of parameters
-    public static AverageScore newInstance(String param1, String param2) {
-        AverageScore fragment = new AverageScore();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,6 +57,7 @@ public class AverageScore extends Fragment {
         editTextint= view.findViewById(R.id.editTextNumberSigned);
         editTextdbl1 = view.findViewById(R.id.editTextNumberDecimal);
         editTextdbl2 = view.findViewById(R.id.editTextNumberDecimal2);
+
     }
 
     @Override
@@ -100,13 +84,18 @@ public class AverageScore extends Fragment {
 
 
     public void Buttons(){
-        double NewAverageScore = Double.parseDouble(editTextdbl1.getText().toString());
-        double CurrentAverageScore = Double.parseDouble(editTextdbl2.getText().toString());
-        int quantity = Integer.parseInt(editTextint.getText().toString());
-        double result = quantity*CurrentAverageScore;
-        int result2 = Answer(quantity, NewAverageScore, result);
-        Log.d("RRR",result2+"");
-        orderViewModel.set_avgscore(result2);
-        Navigation.findNavController(requireView()).navigate(R.id.action_averageScore_to_scoreAnswer);
+
+        if (editTextdbl1.getText().toString().isEmpty() || editTextdbl2.getText().toString().isEmpty() || editTextint.getText().toString().isEmpty()){
+            Toast.makeText(getActivity(), "Введите все значения", Toast.LENGTH_SHORT).show();
+        } else {
+            double NewAverageScore = Double.parseDouble(editTextdbl1.getText().toString());
+            double CurrentAverageScore = Double.parseDouble(editTextdbl2.getText().toString());
+            int quantity = Integer.parseInt(editTextint.getText().toString());
+            double result = quantity*CurrentAverageScore;
+            int result2 = Answer(quantity, NewAverageScore, result);
+            Log.d("RRR",result2+"");
+            orderViewModel.set_avgscore(result2);
+            Navigation.findNavController(requireView()).navigate(R.id.action_averageScore_to_scoreAnswer);
+        }
     }
 }
