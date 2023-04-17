@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#211400"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".TheoryAndPractice">
+
+    <data>
+        <variable
+            name="viewModelPr"
+            type="com.example.myproject.model.OrderViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/practiceandtheory">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="377dp"
-            android:layout_height="716dp"
-            android:src="@drawable/practiceandtheory"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/btnTheory"
+            android:id="@+id/btnPractice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -51,7 +52,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.326"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnTheory" />
+            app:layout_constraintTop_toBottomOf="@+id/btnPractice" />
 
         <TextView
             android:id="@+id/textView18"
@@ -68,16 +69,16 @@
 
         <TextView
             android:id="@+id/textView19"
-            android:layout_width="82dp"
-            android:layout_height="41dp"
+            android:layout_width="80dp"
+            android:layout_height="42dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/secondfont"
             android:text="Тест"
             android:textColor="#FFFFFF"
             android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="@+id/btnTheory"
-            app:layout_constraintStart_toStartOf="@+id/btnTheory"
-            app:layout_constraintTop_toTopOf="@+id/btnTheory" />
+            app:layout_constraintEnd_toEndOf="@+id/btnPractice"
+            app:layout_constraintStart_toStartOf="@+id/btnPractice"
+            app:layout_constraintTop_toTopOf="@+id/btnPractice" />
 
         <TextView
             android:id="@+id/textView20"
@@ -106,6 +107,36 @@
             app:layout_constraintEnd_toEndOf="@+id/theoryAndPracticeBack"
             app:layout_constraintStart_toStartOf="@+id/theoryAndPracticeBack"
             app:layout_constraintTop_toTopOf="@+id/theoryAndPracticeBack" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="28dp"
+            android:src="@drawable/vector__1_"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton19"
+            app:layout_constraintEnd_toEndOf="@+id/imageButton19" />
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="39dp"
+            android:src="@drawable/pen_svg"
+            app:layout_constraintBottom_toBottomOf="@+id/btnPractice"
+            app:layout_constraintEnd_toEndOf="@+id/btnPractice" />
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="33dp"
+            android:src="@drawable/vector"
+            app:layout_constraintBottom_toBottomOf="@+id/btnPractice"
+            app:layout_constraintEnd_toEndOf="@+id/btnPractice" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

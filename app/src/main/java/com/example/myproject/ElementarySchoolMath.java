@@ -36,6 +36,7 @@ public class ElementarySchoolMath extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         elementaryschoolmathBinding.btnaddition.setOnClickListener(view1 -> goToNextScreen());
+        elementaryschoolmathBinding.btnaddition.setOnClickListener(view2 -> goToNextScreen());
         elementaryschoolmathBinding.btnMathBack.setOnClickListener(view2 -> goToBackScreen());
     }
     public void goToNextScreen() {

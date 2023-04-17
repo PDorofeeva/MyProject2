@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -12,13 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.myproject.databinding.TheoryandpracticeBinding;
+import com.example.myproject.model.OrderViewModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TheoryAndPractice#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.Random;
+
 public class TheoryAndPractice extends Fragment {
+    private OrderViewModel orderViewModelPr;
     TheoryandpracticeBinding theoryandpracticeBinding;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -31,15 +31,6 @@ public class TheoryAndPractice extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BlankFragment2.
-     */
-    // TODO: Rename and change types and number of parameters
     public static TheoryAndPractice newInstance(String param1, String param2) {
         TheoryAndPractice fragment = new TheoryAndPractice();
         Bundle args = new Bundle();
@@ -61,10 +52,15 @@ public class TheoryAndPractice extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        theoryandpracticeBinding.btnTheory.setOnClickListener(view1 -> goToNextScreen());
+        theoryandpracticeBinding.btnPractice.setOnClickListener(view1 -> goToNextScreen());
         theoryandpracticeBinding.theoryAndPracticeBack.setOnClickListener(view2 -> goToBackScreen());
     }
+    Random rnd = new Random();
+    int number1 = rnd.nextInt(100);
+    int number2 = rnd.nextInt(100);
     public void goToNextScreen() {
+        orderViewModelPr.set_number1(number1);
+        orderViewModelPr.set_number2(number2);
         Navigation.findNavController(requireView()).navigate(R.id.action_theoryandpractice_to_newfragment);
     }
     public void goToBackScreen() {
@@ -74,6 +70,7 @@ public class TheoryAndPractice extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         theoryandpracticeBinding = TheoryandpracticeBinding.inflate(inflater, container, false);
+        orderViewModelPr = new ViewModelProvider(requireActivity()).get(OrderViewModel.class);
         // Inflate the layout for this fragment
         return theoryandpracticeBinding.getRoot();
     }

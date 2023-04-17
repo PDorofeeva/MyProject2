@@ -14,7 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.myproject.databinding.FragmentPractice1Binding;
 import com.example.myproject.model.OrderViewModel;
 
@@ -26,6 +29,7 @@ public class Practice extends Fragment {
     public FragmentPractice1Binding fragmentPracticeBinding;
     public OrderViewModel orderViewModelPr;
 
+    public ProgressBar progressBar;
     public EditText editTextint2;
 
     public TextView textView37;
@@ -47,6 +51,8 @@ public class Practice extends Fragment {
                              Bundle savedInstanceState) {
         fragmentPracticeBinding = FragmentPractice1Binding.inflate(inflater, container, false);
         orderViewModelPr = new ViewModelProvider(requireActivity()).get(OrderViewModel.class);
+        fragmentPracticeBinding.setViewModelPr(orderViewModelPr);
+        fragmentPracticeBinding.setLifecycleOwner(this);
         return fragmentPracticeBinding.getRoot();
     }
 
@@ -54,47 +60,86 @@ public class Practice extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fragmentPracticeBinding.button14.setOnClickListener(view2 ->  goToBackScreen());
-        fragmentPracticeBinding.button15.setOnClickListener(view1 -> Smth());
+        fragmentPracticeBinding.button15.setOnClickListener(view1 -> ForNumbersAddition());
         editTextint2= view.findViewById(R.id.editTextint2);
         textView37 = view.findViewById(R.id.textView37);
         textView39 = view.findViewById(R.id.textView39);
         button15 = view.findViewById(R.id.button15);
+        progressBar = view.findViewById(R.id.progressBar);
+        progressBar.setMax(10);
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         fragmentPracticeBinding = null;
     }
-    int count = 0;
+    int count = 1;
     int right = 0;
 
 
-    public void Smth(){
-        Buttons();
-        Random yuy = new Random();
-        String number1 = Integer.toString(yuy.nextInt(100));
-        String number2 = Integer.toString(yuy.nextInt(100));
-        textView37.setText(number1);
-        textView39.setText(number2);
+
+    public void ForNumbersAddition(){
+        progressBar.setProgress(count);
+        Log.d("TEXTVIEW3739", "!!!!! " + count);
+        if (editTextint2.getText().toString().isEmpty()) {
+            Toast.makeText(getActivity(), "Введите ответ", Toast.LENGTH_SHORT).show();
+        } else if ( editTextint2.getText().toString().equals("-")) {
+            Log.d("TEXTVIEW3739", "Count: " + count + "--");
+            editTextint2.getText().clear();
+            Random yuy = new Random();
+            String number1 = Integer.toString(yuy.nextInt(100));
+            String number2 = Integer.toString(yuy.nextInt(100));
+            textView37.setText(number1);
+            textView39.setText(number2);
+            if(count ==10)
+            {
+                showMeText();
+                orderViewModelPr.set_answer(right);
+                orderViewModelPr.set_count(count);
+                Navigation.findNavController(requireView()).navigate(R.id.action_newfragment_to_mathTestResult);
+            }
+            count++;
+        } else{
+            ForNumbersAddition2();
+            editTextint2.getText().clear();
+            Random yuy = new Random();
+            String number1 = Integer.toString(yuy.nextInt(100));
+            String number2 = Integer.toString(yuy.nextInt(100));
+            textView37.setText(number1);
+            textView39.setText(number2);
+        }
     }
-    public void Buttons(){
+    public void ForNumbersAddition2(){
         int answer = Integer.parseInt(editTextint2.getText().toString());
-        if(count ==5){
-            orderViewModelPr.set_answer(right);
-            orderViewModelPr.set_count(count);
-            Navigation.findNavController(requireView()).navigate(R.id.action_newfragment_to_mathTestResult);
-        }else {
+        Log.d("TEXTVIEW3739", "This: " + count);
+        if(count <= 10){
             int one = Integer.parseInt((String) textView37.getText());
             int two = Integer.parseInt((String) textView39.getText());
-            Log.d("TEXTVIEW3739", "One: " + one + "  Two:" + two);
-            Log.d("TEXTVIEW3739", "Sum: " + (one + two) + "My answer:" + answer);
+            Log.d("TEXTVIEW3739", "One: " + one + "  Two:" + two + "Count: " + count);
+            Log.d("TEXTVIEW3739", "Sum: " + (one + two) + " My answer:" + answer);
             if (one + two == answer) {
                 right++;
             }
-            count++;
         }
+        if (count == 10)
+        {
+            Log.d("TEXTVIEW3739", "!!!");
+            showMeText();
+            orderViewModelPr.set_answer(right);
+            orderViewModelPr.set_count(count);
+            Navigation.findNavController(requireView()).navigate(R.id.action_newfragment_to_mathTestResult);
+        }
+        count++;
+    }
 
+    public void showMeText(){
+        if (right <8){
+            orderViewModelPr.set_stroke("Возможно стоит повторить теорию?");
+        } else if (right == 8 || right == 9) {
+            orderViewModelPr.set_stroke("Ещё немного и победа!");
+        } else{
+            orderViewModelPr.set_stroke("Хорошая работа! Материал усвоен!");
+        }
     }
 
     public void goToBackScreen() {

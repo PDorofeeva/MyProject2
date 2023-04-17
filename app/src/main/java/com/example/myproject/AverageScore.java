@@ -83,9 +83,10 @@ public class AverageScore extends Fragment {
     }
 
 
+
     public void Buttons(){
 
-        if (editTextdbl1.getText().toString().isEmpty() || editTextdbl2.getText().toString().isEmpty() || editTextint.getText().toString().isEmpty()){
+        if (editTextdbl1.getText().toString().isEmpty() || editTextdbl2.getText().toString().isEmpty() || editTextint.getText().toString().isEmpty() || Double.parseDouble(editTextdbl1.getText().toString()) == 0 || Double.parseDouble(editTextdbl2.getText().toString()) == 0 || Integer.parseInt(editTextint.getText().toString())==0){
             Toast.makeText(getActivity(), "Введите все значения", Toast.LENGTH_SHORT).show();
         } else {
             double NewAverageScore = Double.parseDouble(editTextdbl1.getText().toString());

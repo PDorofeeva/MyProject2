@@ -15,10 +15,25 @@ public class OrderViewModel extends ViewModel {
     private MutableLiveData<Integer> _count = new MutableLiveData<>(0);// для Model
     public LiveData<Integer> count  = _count; // для View
 
+    private MutableLiveData<Integer> _number1 = new MutableLiveData<>(0);// для Model
+    public LiveData<Integer> number1 = _number1; // для View
+
+    private MutableLiveData<Integer> _number2 = new MutableLiveData<>(0);// для Model
+    public LiveData<Integer> number2  = _number2; // для View
+
+
+    private MutableLiveData<String> _stroke = new MutableLiveData<>("");// для Model
+    public LiveData<String> stroke  = _stroke; // для View
+
     public void set_avgscore(int _score) {
         this._avgscore.setValue(_score);
     }
     public void set_answer(int _answer){this._answer.setValue(_answer);}
 
     public void set_count(int _count){this._count.setValue(_count);}
+
+    public void set_number1(int _number1){this._number1.setValue(_number1);}
+    public void set_number2(int _number2){this._number2.setValue(_number2);}
+
+    public void set_stroke(String _stroke){this._stroke.setValue(_stroke);}
 }

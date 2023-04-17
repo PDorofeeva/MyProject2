@@ -50,15 +50,7 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
         return fragmentMainfragmentBinding.getRoot();
     }
 
-    /*@Override
-    public void onClick(View view) {
-
-        if(view.getId() == R.id.btnMath){
-            //Переключение на фрагмент
-        } //(new ElementarySchoolMath());
-    }
-     */
-    public void Buttons(int number){ //This method must do smth
+    public void Buttons(int number){
         if(number == 1){
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_elementaryschoolmath);
         } else if (number == 5) {

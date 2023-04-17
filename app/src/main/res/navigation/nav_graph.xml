@@ -93,5 +93,17 @@
         <action
             android:id="@+id/action_mathTestResult_to_mainfragment"
             app:destination="@id/mainfragment" />
+        <action
+            android:id="@+id/action_mathTestResult_to_historyOfResults"
+            app:destination="@id/historyOfResults" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyOfResults"
+        android:name="com.example.myproject.HistoryOfResults"
+        android:label="fragment_history_of_results"
+        tools:layout="@layout/fragment_history_of_results" >
+        <action
+            android:id="@+id/action_historyOfResults_to_mainfragment"
+            app:destination="@id/mainfragment" />
     </fragment>
 </navigation>

@@ -38,7 +38,6 @@ public class MathTestResult extends Fragment {
         orderViewModelPr = new ViewModelProvider(requireActivity()).get(OrderViewModel.class);
         fragmentMathTestResultBinding.setViewModelPr(orderViewModelPr);
         fragmentMathTestResultBinding.setLifecycleOwner(this);
-        // Inflate the layout for this fragment
         return fragmentMathTestResultBinding.getRoot();
     }
 
@@ -46,6 +45,11 @@ public class MathTestResult extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fragmentMathTestResultBinding.imageButton2.setOnClickListener(view1 -> goToBackScreen());
+        fragmentMathTestResultBinding.imageButton12.setOnClickListener(view2 -> goToNextScreen());
+    }
+
+    public void goToNextScreen(){
+        Navigation.findNavController(requireView()).navigate(R.id.action_mathTestResult_to_historyOfResults);
     }
 
     public void goToBackScreen() {
