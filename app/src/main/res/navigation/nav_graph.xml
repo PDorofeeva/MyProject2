@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_mainfragment_to_historyOfScore"
             app:destination="@id/historyOfScore" />
+        <action
+            android:id="@+id/action_mainfragment_to_logIn"
+            app:destination="@id/logIn" />
     </fragment>
     <fragment
         android:id="@+id/elementaryschoolmath"
@@ -104,6 +107,15 @@
         tools:layout="@layout/fragment_history_of_results" >
         <action
             android:id="@+id/action_historyOfResults_to_mainfragment"
+            app:destination="@id/mainfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logIn"
+        android:name="com.example.myproject.LogIn"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logIn_to_mainfragment"
             app:destination="@id/mainfragment" />
     </fragment>
 </navigation>

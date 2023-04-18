@@ -28,6 +28,7 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
     private FragmentMainfragmentBinding fragmentMainfragmentBinding;
 
 
+
     public Mainfragment() {
         // Required empty public constructor
     }
@@ -36,7 +37,7 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
              super.onCreate(savedInstanceState);
     }
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_mainfragment, container, false);
@@ -55,9 +56,10 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_elementaryschoolmath);
         } else if (number == 5) {
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_averageScore);
-
         } else if (number == 6) {
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_historyOfScore);
+        } else if (number == 7) {
+            Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_logIn);
         }
     }
     @Override
@@ -69,8 +71,8 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
         fragmentMainfragmentBinding.btnInformatics.setOnClickListener(view4 -> Buttons(4));
         fragmentMainfragmentBinding.btncount.setOnClickListener(view5 -> Buttons(5));
         fragmentMainfragmentBinding.btnresultcount.setOnClickListener(view6 -> Buttons(6));
+        fragmentMainfragmentBinding.imageButton16.setOnClickListener(view6 -> Buttons(7));
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
