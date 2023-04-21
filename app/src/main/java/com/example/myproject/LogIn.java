@@ -7,10 +7,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.myproject.databinding.FragmentLogInBinding;
 import com.google.firebase.database.DatabaseReference;
@@ -58,27 +60,16 @@ public class LogIn extends Fragment {
             String id = dataBase.getKey();
             String name = username.getText().toString();
             String useremail = email.getText().toString();
-            UserInfo User = new UserInfo(id, name, useremail);
-            dataBase.push().setValue(User);
-            Navigation.findNavController(requireView()).navigate(R.id.action_logIn_to_mainfragment);
+            if(!TextUtils.isEmpty(name) || !TextUtils.isEmpty(useremail)) {
+                UserInfo User = new UserInfo(id, name, useremail);
+                dataBase.push().setValue(User);
+                Navigation.findNavController(requireView()).navigate(R.id.action_logIn_to_mainfragment);
+                Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+            } else{
+                Toast.makeText(getActivity(), "Заполните необходимые поля", Toast.LENGTH_SHORT).show();
+            }
         });
-        //logInBinding.login2.setOnClickListener(view3 -> onClickRead(view));
     }
-    /*
-    public void onClickSave(){
-        String id = dataBase.getKey();
-        String name = username.getText().toString();
-        String useremail = email.getText().toString();
-        UserInfo User = new UserInfo(id, name, useremail);
-        dataBase.push().setValue(User);
-    }
-
-
-    public void onClickRead(View view){
-
-    }
-
- */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
