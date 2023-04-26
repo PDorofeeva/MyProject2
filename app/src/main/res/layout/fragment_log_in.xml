@@ -12,92 +12,185 @@
     tools:context=".LogIn">
 
     <EditText
-        android:id="@+id/username"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="#FFFFFF"
-        android:hint="username"
-        android:inputType="textEmailAddress"
-        android:selectAllOnFocus="true"
-        android:textColor="#000000"
-        android:textColorHint="#2AFAFAFA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="#FFFFFF"
-        android:hint="@string/prompt_email"
-        android:inputType="textEmailAddress"
-        android:selectAllOnFocus="true"
-        android:textColor="#000000"
-        android:textColorHint="#2AFAFAFA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/password"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="324dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#FFFFFF"
         android:hint="@string/prompt_password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
+        android:textColor="#FFFFFF"
         android:textColorHint="#1BFFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/TextEmail"
+        app:layout_constraintStart_toStartOf="@+id/TextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/TextEmail" />
 
     <Button
-        android:id="@+id/login"
-        android:layout_width="149dp"
-        android:layout_height="45dp"
+        android:id="@+id/registration"
+        android:layout_width="154dp"
+        android:layout_height="54dp"
         android:layout_gravity="start"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="132dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="64dp"
         android:backgroundTint="#80B86B"
-        android:text="Save"
+        android:text="Регистрация"
         android:textColor="#6B7334"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
-        android:id="@+id/login2"
-        android:layout_width="142dp"
-        android:layout_height="48dp"
+        android:id="@+id/authorization"
+        android:layout_width="155dp"
+        android:layout_height="54dp"
         android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="64dp"
         android:backgroundTint="#80B86B"
-        android:text="read"
+        android:text="Авторизация"
         android:textColor="#6B7334"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/registration"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/registration"
+        app:layout_constraintTop_toBottomOf="@+id/registration" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="224dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/secondfont"
+        android:text="Авторизация"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/TextEmail"
+        android:layout_width="325dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="212dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#1BFFFFFF"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#00FFFFFF"
+        android:fontFamily="@font/secondfont"
+        android:text="Ваш аккаунт"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="87dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="#00FFFFFF"
+        android:fontFamily="@font/secondfont"
+        android:text="Email:"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/textView48"
+        app:layout_constraintStart_toStartOf="@+id/textView48"
+        app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="385dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#00FFFFFF"
+        android:fontFamily="@font/secondfont"
+        android:text="pp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView53" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="348dp"
+        android:layout_height="104dp"
+        android:backgroundTint="#00FFFFFF"
+        android:src="@drawable/rectangle_7"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="348dp"
+        android:layout_height="104dp"
+        android:backgroundTint="#00FFFFFF"
+        android:src="@drawable/rectangle_7"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/secondfont"
+        android:text="Назад"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton10"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton10"
+        app:layout_constraintStart_toStartOf="@+id/imageButton10"
+        app:layout_constraintTop_toTopOf="@+id/imageButton10" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/secondfont"
+        android:text="Выход из аккаунта"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton10"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton11"
+        app:layout_constraintStart_toStartOf="@+id/imageButton11"
+        app:layout_constraintTop_toTopOf="@+id/imageButton11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

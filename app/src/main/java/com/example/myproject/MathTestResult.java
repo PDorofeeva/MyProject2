@@ -15,9 +15,10 @@ import android.view.ViewGroup;
 import com.example.myproject.databinding.FragmentMathTestResultBinding;
 import com.example.myproject.databinding.FragmentScoreAnswerBinding;
 import com.example.myproject.model.OrderViewModel;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MathTestResult extends Fragment {
-
+    private FirebaseAuth auth;
     private OrderViewModel orderViewModelPr;
     public FragmentMathTestResultBinding fragmentMathTestResultBinding;
 
@@ -46,6 +47,8 @@ public class MathTestResult extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         fragmentMathTestResultBinding.imageButton2.setOnClickListener(view1 -> goToBackScreen());
         fragmentMathTestResultBinding.imageButton12.setOnClickListener(view2 -> goToNextScreen());
+        auth = FirebaseAuth.getInstance();
+        auth.getCurrentUser();
     }
 
     public void goToNextScreen(){

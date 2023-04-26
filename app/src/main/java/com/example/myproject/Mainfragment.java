@@ -45,7 +45,6 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
         Spinner spinner = view.findViewById(R.id.spinner);
         adapter = ArrayAdapter.createFromResource(requireActivity().getApplicationContext(), R.array.grades, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        OrderViewModel orderViewModel = new ViewModelProvider(requireActivity()).get(OrderViewModel.class);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         return fragmentMainfragmentBinding.getRoot();
