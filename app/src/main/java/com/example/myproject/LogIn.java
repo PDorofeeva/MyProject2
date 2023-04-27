@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -32,6 +33,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class LogIn extends Fragment {
+    private ConstraintLayout container1, container2;
     private ImageButton imgbtn10, imgbtn11;
     private Button btnIn, btnUp;
     private TextView AccEmail, lettersEmail, lettersAcc, txtBack, authoriztxt, logOutxt;
@@ -70,6 +72,7 @@ public class LogIn extends Fragment {
         super.onStart();
         FirebaseUser user = auth.getCurrentUser();
         if(user != null){
+            /*
             imgbtn10.setVisibility(View.VISIBLE);
             txtBack.setVisibility(View.VISIBLE);
             lettersAcc.setVisibility(View.VISIBLE);
@@ -81,10 +84,14 @@ public class LogIn extends Fragment {
             authoriztxt.setVisibility(View.GONE);
             password.setVisibility(View.GONE);
             EmailText.setVisibility(View.GONE);
+             */
+            container1.setVisibility(View.GONE);
+            container2.setVisibility(View.VISIBLE);
             String txt = user.getEmail();
             AccEmail.setText(txt);
         } else{
-            VisibilityOfRegistrAndAuth();
+            container2.setVisibility(View.GONE);
+            container1.setVisibility(View.VISIBLE);
             Toast.makeText(getActivity(), "Пожалуйста, авторизуйтесь", Toast.LENGTH_SHORT).show();
             //Navigation.findNavController(requireView()).navigate(R.id.action_logIn_to_mainfragment);
         }
@@ -93,12 +100,14 @@ public class LogIn extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //first group
+        container1 = view.findViewById(R.id.container2);
         authoriztxt = view.findViewById(R.id.textView51);
         btnUp = view.findViewById(R.id.registration);
         btnIn = view.findViewById(R.id.authorization);
         password = view.findViewById(R.id.password);
         EmailText = view.findViewById(R.id.TextEmail);
         //second group
+        container2 = view.findViewById(R.id.container3);
         imgbtn11 = view.findViewById(R.id.imageButton11);
         imgbtn10 = view.findViewById(R.id.imageButton10);
         logOutxt = view.findViewById(R.id.textView52);
@@ -142,10 +151,13 @@ public class LogIn extends Fragment {
         });
         logInBinding.imageButton11.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
-            VisibilityOfRegistrAndAuth();
+            container2.setVisibility(View.GONE);
+            container1.setVisibility(View.VISIBLE);
+            //VisibilityOfRegistrAndAuth();
             Toast.makeText(getActivity(), "Вы вышли из аккаунта", Toast.LENGTH_SHORT).show();
         });
 }
+/*
 public void VisibilityOfRegistrAndAuth(){
     imgbtn11.setVisibility(View.GONE);
     imgbtn10.setVisibility(View.GONE);
@@ -161,7 +173,7 @@ public void VisibilityOfRegistrAndAuth(){
     password.setVisibility(View.VISIBLE);
     EmailText.setVisibility(View.VISIBLE);
 }
-/*
+
         username = view.findViewById(R.id.username);
         phone = view.findViewById(R.id.phone);
 
