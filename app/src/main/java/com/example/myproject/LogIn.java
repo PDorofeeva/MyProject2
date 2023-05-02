@@ -34,10 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LogIn extends Fragment {
     private ConstraintLayout container1, container2;
-    private ImageButton imgbtn10, imgbtn11;
-    private Button btnIn, btnUp;
-    private TextView AccEmail, lettersEmail, lettersAcc, txtBack, authoriztxt, logOutxt;
-    private EditText passwordtxt;
+    private TextView AccEmail;
 
     private FragmentLogInBinding logInBinding;
 
@@ -72,19 +69,6 @@ public class LogIn extends Fragment {
         super.onStart();
         FirebaseUser user = auth.getCurrentUser();
         if(user != null){
-            /*
-            imgbtn10.setVisibility(View.VISIBLE);
-            txtBack.setVisibility(View.VISIBLE);
-            lettersAcc.setVisibility(View.VISIBLE);
-            lettersEmail.setVisibility(View.VISIBLE);
-            lettersAcc.setVisibility(View.VISIBLE);
-            AccEmail.setVisibility(View.VISIBLE);
-            btnIn.setVisibility(View.GONE);
-            btnUp.setVisibility(View.GONE);
-            authoriztxt.setVisibility(View.GONE);
-            password.setVisibility(View.GONE);
-            EmailText.setVisibility(View.GONE);
-             */
             container1.setVisibility(View.GONE);
             container2.setVisibility(View.VISIBLE);
             String txt = user.getEmail();
@@ -101,20 +85,11 @@ public class LogIn extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         //first group
         container1 = view.findViewById(R.id.container2);
-        authoriztxt = view.findViewById(R.id.textView51);
-        btnUp = view.findViewById(R.id.registration);
-        btnIn = view.findViewById(R.id.authorization);
         password = view.findViewById(R.id.password);
         EmailText = view.findViewById(R.id.TextEmail);
         //second group
         container2 = view.findViewById(R.id.container3);
-        imgbtn11 = view.findViewById(R.id.imageButton11);
-        imgbtn10 = view.findViewById(R.id.imageButton10);
-        logOutxt = view.findViewById(R.id.textView52);
         AccEmail = view.findViewById(R.id.textView55);
-        lettersEmail = view.findViewById(R.id.textView53);
-        lettersAcc = view.findViewById(R.id.textView48);
-        txtBack = view.findViewById(R.id.textView50);
 
         auth = FirebaseAuth.getInstance();
         logInBinding.imageButton10.setOnClickListener(view1 -> GoToBackScreen());
@@ -158,29 +133,12 @@ public class LogIn extends Fragment {
         });
 }
 /*
-public void VisibilityOfRegistrAndAuth(){
-    imgbtn11.setVisibility(View.GONE);
-    imgbtn10.setVisibility(View.GONE);
-    txtBack.setVisibility(View.GONE);
-    lettersAcc.setVisibility(View.GONE);
-    lettersEmail.setVisibility(View.GONE);
-    lettersAcc.setVisibility(View.GONE);
-    logOutxt.setVisibility(View.GONE);
-    AccEmail.setVisibility(View.GONE);
-    btnIn.setVisibility(View.VISIBLE);
-    btnUp.setVisibility(View.VISIBLE);
-    authoriztxt.setVisibility(View.VISIBLE);
-    password.setVisibility(View.VISIBLE);
-    EmailText.setVisibility(View.VISIBLE);
-}
 
         username = view.findViewById(R.id.username);
         phone = view.findViewById(R.id.phone);
 
         dataBase = FirebaseDatabase.getInstance().getReference(USER_KEY);
         String id = dataBase.getKey();
-        logInBinding.re
-        //logInBinding.login.setOnClickListener(view2 -> onClickSave());
         logInBinding.login.setOnClickListener(v -> {
             String name = username.getText().toString();
             String telephone = phone.getText().toString();

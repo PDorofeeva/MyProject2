@@ -44,8 +44,8 @@ public class HistoryOfResults extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentHistoryOfResultsBinding.inflate(inflater, container, false);
         orderViewModel = new ViewModelProvider(requireActivity()).get(OrderViewModel.class);
-        binding.setViewModel(orderViewModel);
-        binding.setLifecycleOwner(this);
+        //binding.setViewModel(orderViewModel);
+        //binding.setLifecycleOwner(this);
         // Inflate the layout for this fragment
         return binding.getRoot();
     }
@@ -53,7 +53,6 @@ public class HistoryOfResults extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        
         binding.imageButton9.setOnClickListener(view2 -> goToBackScreen());
     }
     public void goToBackScreen() {

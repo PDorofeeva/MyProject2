@@ -1,14 +1,14 @@
 package com.example.myproject;
 
 public class UserInfo {
-    public String id, name, phone, password;
+    public String id, answer, count;
 
     public UserInfo() {
     }
-    public UserInfo(String id, String name, String phone, String password) {
+    public UserInfo(String id, String answer, String count) {
         this.id = id;
-        this.name = name;
-        this.phone = phone;
-        this.password = password;
+        this.answer = answer;
+        this.count = count;
     }
+
 }

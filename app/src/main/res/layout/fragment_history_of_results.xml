@@ -7,11 +7,6 @@
     android:background="#211400"
     tools:context=".HistoryOfResults">
 
-    <data>
-        <Variable
-            name = "viewModel"
-            type = "com.example.myproject.model.OrderViewModel"/>
-    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,7 +25,7 @@
                 android:id="@+id/textView54"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.answer.toString()}"/>
+                android:text="For answer"/>
 
             <TextView
                 android:id="@+id/textView57"
@@ -42,7 +37,7 @@
                 android:id="@+id/textView56"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.count.toString()}" />
+                android:text="For Count" />
         </androidx.recyclerview.widget.RecyclerView>
 
         <ImageButton

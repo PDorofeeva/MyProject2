@@ -112,7 +112,7 @@ public class Practice extends Fragment {
     public void ForNumbersAddition2(){
         int answer = Integer.parseInt(editTextint2.getText().toString());
         Log.d("TEXTVIEW3739", "This: " + count);
-        if(count <= 10){
+        if(count <= 6){
             int one = Integer.parseInt((String) textView37.getText());
             int two = Integer.parseInt((String) textView39.getText());
             Log.d("TEXTVIEW3739", "One: " + one + "  Two:" + two + "Count: " + count);
@@ -121,7 +121,7 @@ public class Practice extends Fragment {
                 right++;
             }
         }
-        if (count == 10)
+        if (count == 6)
         {
             Log.d("TEXTVIEW3739", "!!!");
             showMeText();
@@ -133,9 +133,9 @@ public class Practice extends Fragment {
     }
 
     public void showMeText(){
-        if (right <8){
+        if (right <4){
             orderViewModelPr.set_stroke("Возможно стоит повторить теорию?");
-        } else if (right == 8 || right == 9) {
+        } else if (right == 4 || right == 5) {
             orderViewModelPr.set_stroke("Ещё немного и победа!");
         } else{
             orderViewModelPr.set_stroke("Хорошая работа! Материал усвоен!");
