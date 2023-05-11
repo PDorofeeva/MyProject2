@@ -71,6 +71,9 @@ public class AverageScore extends Fragment {
         if (current>=NewAverageScore){
 
         } else {
+            if (NewAverageScore == 5) {
+                NewAverageScore = 4.9;
+            }
             while (current < NewAverageScore) {
                 result += 5;
                 five++;

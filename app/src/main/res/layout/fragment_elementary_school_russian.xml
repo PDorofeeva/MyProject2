@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/russian_language"
+    android:foregroundTint="#00FFFFFF"
+    tools:context=".ElementarySchoolRussian">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#211400">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="338dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView10">
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Алфавит"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Гласные"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Согласные"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Мягкий и твёрдый знаки"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnRussianBack"
+            android:layout_width="334dp"
+            android:layout_height="94dp"
+            android:layout_marginTop="111dp"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/rectangle_yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="168dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/secondfont"
+            android:text="Выберите тему"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="291dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="52dp"
+            android:fontFamily="@font/secondfont"
+            android:text="Начальная школа"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/secondfont"
+            android:text="Назад"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnRussianBack"
+            app:layout_constraintStart_toStartOf="@+id/btnRussianBack"
+            app:layout_constraintTop_toTopOf="@+id/btnRussianBack" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="349dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="84dp"
+            android:text="_____________________________________________________"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.532"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="349dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="1dp"
+            android:text="_____________________________________________________"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.532"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="103dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/secondfont"
+            android:text="1 Класс"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="100dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="332dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/secondfont"
+            android:text="2 Класс"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="97dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="332dp"
+            android:fontFamily="@font/secondfont"
+            android:text="3 Класс"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="349dp"
+            android:layout_height="18dp"
+            android:text="_____________________________________________________"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.467"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <LinearLayout
+            android:layout_width="345dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView13">
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Орфограммы"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Члены предложения"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Части речи"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="Состав слова"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="345dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="349dp"
+            android:layout_height="18dp"
+            android:text="_____________________________________________________"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="345dp"
+            android:layout_height="265dp"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16">
+
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/button21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:fontFamily="@font/secondfont"
+                android:maxLength="360"
+                android:minHeight="67dp"
+                android:text="тема"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="106dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="372dp"
+            android:fontFamily="@font/secondfont"
+            android:text="4 Класс"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

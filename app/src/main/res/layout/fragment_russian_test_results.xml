@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MathTestResult">
+    tools:context=".russianTestResults">
 
     <data>
         <variable
@@ -10,9 +10,9 @@
             type="com.example.myproject.model.OrderViewModel" />
     </data>
     <FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/mthresults">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/russian_final_grade">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +24,7 @@
                 android:layout_width="363dp"
                 android:layout_height="125dp"
                 android:layout_marginBottom="22dp"
-                android:src="@drawable/rectangle_35"
+                android:src="@drawable/rectangle_3434"
                 app:layout_constraintBottom_toTopOf="@+id/textView47"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.291"
@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
-                android:src="@drawable/rectangle_27"
+                android:src="@drawable/rectangle_2727"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -121,7 +121,6 @@
                 android:id="@+id/textView47"
                 android:layout_width="232dp"
                 android:layout_height="265dp"
-                android:layout_marginStart="10dp"
                 android:layout_marginBottom="68dp"
                 android:fontFamily="@font/secondfont"
                 android:text="Вы можете сохранить свои результаты и посмотреть их позже в разделе “Мои результаты”"
@@ -136,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="1dp"
                 android:backgroundTint="#00FFFFFF"
-                android:src="@drawable/rectangle_27"
+                android:src="@drawable/rectangle_2727"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageButton2" />
 
@@ -155,5 +154,5 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+    </FrameLayout>
 </layout>

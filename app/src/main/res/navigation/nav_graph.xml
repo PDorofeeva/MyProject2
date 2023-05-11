@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_mainfragment_to_logIn"
             app:destination="@id/logIn" />
+        <action
+            android:id="@+id/action_mainfragment_to_elementarySchoolRussian"
+            app:destination="@id/elementarySchoolRussian" />
     </fragment>
     <fragment
         android:id="@+id/elementaryschoolmath"
@@ -116,6 +119,66 @@
         tools:layout="@layout/fragment_log_in" >
         <action
             android:id="@+id/action_logIn_to_mainfragment"
+            app:destination="@id/mainfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elementarySchoolRussian"
+        android:name="com.example.myproject.ElementarySchoolRussian"
+        android:label="fragment_elementary_school_russian"
+        tools:layout="@layout/fragment_elementary_school_russian" >
+        <action
+            android:id="@+id/action_elementarySchoolRussian_to_mainfragment"
+            app:destination="@id/mainfragment" />
+        <action
+            android:id="@+id/action_elementarySchoolRussian_to_orphograms"
+            app:destination="@id/orphograms" />
+    </fragment>
+    <fragment
+        android:id="@+id/theoryAndPracticeRussian"
+        android:name="com.example.myproject.TheoryAndPracticeRussian"
+        android:label="fragment_theory_and_practice_russian"
+        tools:layout="@layout/fragment_theory_and_practice_russian" >
+        <action
+            android:id="@+id/action_theoryAndPracticeRussian_to_orphograms"
+            app:destination="@id/orphograms" />
+        <action
+            android:id="@+id/action_theoryAndPracticeRussian_to_russianPractice"
+            app:destination="@id/russianPractice" />
+    </fragment>
+    <fragment
+        android:id="@+id/orphograms"
+        android:name="com.example.myproject.Orphograms"
+        android:label="fragment_orphograms"
+        tools:layout="@layout/fragment_orphograms" >
+        <action
+            android:id="@+id/action_orphograms_to_theoryAndPracticeRussian"
+            app:destination="@id/theoryAndPracticeRussian" />
+        <action
+            android:id="@+id/action_orphograms_to_elementarySchoolRussian"
+            app:destination="@id/elementarySchoolRussian" />
+    </fragment>
+    <fragment
+        android:id="@+id/russianPractice"
+        android:name="com.example.myproject.RussianPractice"
+        android:label="fragment_russian_practice"
+        tools:layout="@layout/fragment_russian_practice" >
+        <action
+            android:id="@+id/action_russianPractice_to_mainfragment"
+            app:destination="@id/mainfragment" />
+        <action
+            android:id="@+id/action_russianPractice_to_russianTestResults"
+            app:destination="@id/russianTestResults" />
+    </fragment>
+    <fragment
+        android:id="@+id/russianTestResults"
+        android:name="com.example.myproject.russianTestResults"
+        android:label="fragment_russian_test_results"
+        tools:layout="@layout/fragment_russian_test_results" >
+        <action
+            android:id="@+id/action_russianTestResults_to_historyOfResults"
+            app:destination="@id/historyOfResults" />
+        <action
+            android:id="@+id/action_russianTestResults_to_mainfragment"
             app:destination="@id/mainfragment" />
     </fragment>
 </navigation>

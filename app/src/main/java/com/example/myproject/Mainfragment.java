@@ -53,6 +53,8 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
     public void Buttons(int number){
         if(number == 1){
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_elementaryschoolmath);
+        } else if (number == 2) {
+            Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_elementarySchoolRussian);
         } else if (number == 5) {
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_averageScore);
         } else if (number == 6) {

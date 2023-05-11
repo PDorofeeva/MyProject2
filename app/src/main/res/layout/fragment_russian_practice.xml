@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RussianPractice">
+
+    <data>
+        <variable
+            name="viewModelPr"
+            type="com.example.myproject.model.OrderViewModel" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/russian_practice">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="332dp"
+                android:layout_height="303dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/secondfont"
+                android:text="Выберите букву, с которой начинается слово: З - заглавная М - маленькая"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="357dp"
+                android:layout_height="93dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/secondfont"
+                android:text="@{viewModelPr.stroke}"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView24"
+                app:layout_constraintHorizontal_bias="0.64"
+                app:layout_constraintStart_toStartOf="@+id/textView24"
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="50dp"
+                android:layout_height="277dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="#ECECEC"
+                android:progressBackgroundTint="#ECECEC"
+                android:progressTint="#C6954C"
+                android:rotation="270"
+                android:scaleX="6.2"
+                android:scaleY="8"
+                app:layout_constraintStart_toEndOf="@+id/button15"
+                app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="298dp"
+                android:layout_height="83dp"
+                android:layout_marginTop="168dp"
+                android:backgroundTint="#744726"
+                android:fontFamily="@font/secondfont"
+                android:text="З"
+                android:textSize="24sp"
+                app:cornerRadius="10sp"
+                app:layout_constraintStart_toStartOf="@+id/textView24"
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="298dp"
+                android:layout_height="83dp"
+                android:backgroundTint="#744726"
+                android:fontFamily="@font/secondfont"
+                android:text="М"
+                android:textSize="24sp"
+                app:cornerRadius="10sp"
+                app:layout_constraintEnd_toEndOf="@+id/button10"
+                app:layout_constraintTop_toBottomOf="@+id/button10" />
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="298dp"
+                android:layout_height="83dp"
+                android:backgroundTint="#744726"
+                android:fontFamily="@font/secondfont"
+                android:text="Выйти"
+                android:textSize="20sp"
+                app:cornerRadius="10sp"
+                app:layout_constraintEnd_toEndOf="@+id/button10"
+                app:layout_constraintTop_toBottomOf="@+id/button15" />
+
+            <TextView
+                android:id="@+id/hepler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModelPr.number1.toString()}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
