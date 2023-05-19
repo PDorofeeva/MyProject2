@@ -33,6 +33,13 @@ public class OrderViewModel extends ViewModel {
     public LiveData<String> stroke  = _stroke; // для View
 
 
+    private MutableLiveData<String> _subject = new MutableLiveData<>("");// для Model
+    public LiveData<String> subject  = _subject;
+
+    private MutableLiveData<String> _subtheme = new MutableLiveData<>("");// для Model
+    public LiveData<String> subtheme  = _subtheme;
+
+
     public void set_avgscore(int _score) {
         this._avgscore.setValue(_score);
     }
@@ -47,4 +54,7 @@ public class OrderViewModel extends ViewModel {
     public void set_number2last(String _number2last){this._number2last.setValue(_number2last);}
 
     public void set_stroke(String _stroke){this._stroke.setValue(_stroke);}
+
+    public void set_subject(String _subject){this._subject.setValue(_subject);}
+    public void set_subtheme(String _subtheme){this._subtheme.setValue(_subtheme);}
 }

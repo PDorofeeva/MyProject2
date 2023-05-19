@@ -24,6 +24,12 @@
         <action
             android:id="@+id/action_mainfragment_to_elementarySchoolRussian"
             app:destination="@id/elementarySchoolRussian" />
+        <action
+            android:id="@+id/action_mainfragment_to_elementarySchoolEnglish"
+            app:destination="@id/elementarySchoolEnglish" />
+        <action
+            android:id="@+id/action_mainfragment_to_elementarySchoolInformatics"
+            app:destination="@id/elementarySchoolInformatics" />
     </fragment>
     <fragment
         android:id="@+id/elementaryschoolmath"
@@ -144,6 +150,9 @@
         <action
             android:id="@+id/action_theoryAndPracticeRussian_to_russianPractice"
             app:destination="@id/russianPractice" />
+        <action
+            android:id="@+id/action_theoryAndPracticeRussian_to_theoryRussian"
+            app:destination="@id/theoryRussian" />
     </fragment>
     <fragment
         android:id="@+id/orphograms"
@@ -180,5 +189,31 @@
         <action
             android:id="@+id/action_russianTestResults_to_mainfragment"
             app:destination="@id/mainfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elementarySchoolEnglish"
+        android:name="com.example.myproject.ElementarySchoolEnglish"
+        android:label="fragment_elementary_school_english"
+        tools:layout="@layout/fragment_elementary_school_english" >
+        <action
+            android:id="@+id/action_elementarySchoolEnglish_to_mainfragment"
+            app:destination="@id/mainfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elementarySchoolInformatics"
+        android:name="com.example.myproject.ElementarySchoolInformatics"
+        android:label="fragment_elementary_school_informatics"
+        tools:layout="@layout/fragment_elementary_school_informatics" >
+        <action
+            android:id="@+id/action_elementarySchoolInformatics_to_mainfragment"
+            app:destination="@id/mainfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/theoryRussian"
+        android:name="com.example.myproject.TheoryRussian"
+        android:label="TheoryRussian" >
+        <action
+            android:id="@+id/action_theoryRussian_to_theoryAndPracticeRussian"
+            app:destination="@id/theoryAndPracticeRussian" />
     </fragment>
 </navigation>

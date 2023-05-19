@@ -1,5 +1,6 @@
 package com.example.myproject;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -7,7 +8,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.preference.PreferenceManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +20,17 @@ import android.widget.Toast;
 import com.example.myproject.databinding.FragmentMathTestResultBinding;
 import com.example.myproject.databinding.FragmentScoreAnswerBinding;
 import com.example.myproject.model.OrderViewModel;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class MathTestResult extends Fragment {
+    private ArrayList<UserInfo> list;
+    private SharedPreferences sharedPreferences;
     private DatabaseReference dataBase;
     private OrderViewModel orderViewModelPr;
     private TextView textView25, textView42;
@@ -61,9 +70,16 @@ public class MathTestResult extends Fragment {
         String answer = textView25.getText().toString();
         String count = textView42.getText().toString();
         UserInfo User = new UserInfo(FirebaseAuth.getInstance().getUid(), answer, count);//!
-        //Navigation.findNavController(requireView()).navigate(R.id.action_mathTestResult_to_historyOfResults);
-        dataBase.setValue("{\"id\": 123}");
-        dataBase.push().setValue("{\"id\": 123}");
+        dataBase.child("MathResults").push().setValue(User).addOnSuccessListener(unused -> Log.d("TTT", "4321")).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("TTT", e.toString());
+            }
+        });
+
+        //sharedPreferences = PreferenceManager.getDefaultSharedPreferences(User);
+        list = new ArrayList<>();
+
         Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
         //Database.child("User").child(FirebaseAuth.getInstance().getUid()).child("answer").setValue(fragmentMathTestResultBinding.textView42.getText().toString());
     }

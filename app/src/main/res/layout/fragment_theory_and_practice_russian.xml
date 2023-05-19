@@ -137,6 +137,7 @@
                 android:src="@drawable/vector"
                 app:layout_constraintBottom_toBottomOf="@+id/btnPractice"
                 app:layout_constraintEnd_toEndOf="@+id/btnPractice" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

@@ -1,5 +1,7 @@
 package com.example.myproject;
 
+import android.content.Context;
+
 public class UserInfo {
     public String id, answer, count;
 

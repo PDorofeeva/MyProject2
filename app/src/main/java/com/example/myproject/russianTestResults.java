@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 import com.example.myproject.databinding.FragmentMathTestResultBinding;
 import com.example.myproject.databinding.FragmentRussianTestResultsBinding;
 import com.example.myproject.model.OrderViewModel;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -80,7 +82,14 @@ public class russianTestResults extends Fragment {
         String count = textView42.getText().toString();
         UserInfo User = new UserInfo(FirebaseAuth.getInstance().getUid(), answer, count);//!
         //Navigation.findNavController(requireView()).navigate(R.id.action_mathTestResult_to_historyOfResults);
-        dataBase.push().setValue(User);
+        dataBase.child("RussianResults").push().setValue(User).addOnSuccessListener(unused -> Log.d("TTT", "Works")).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("TTT", e.toString());
+            }
+        });
+
+        Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
         Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
         //Database.child("User").child(FirebaseAuth.getInstance().getUid()).child("answer").setValue(fragmentMathTestResultBinding.textView42.getText().toString());
     }

@@ -19,15 +19,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.myproject.databinding.FragmentMainfragmentBinding;
+import com.example.myproject.databinding.FragmentMathTestResultBinding;
+import com.example.myproject.databinding.FragmentRussianTestResultsBinding;
 import com.example.myproject.model.OrderViewModel;
 
 import java.util.Objects;
 
 public class Mainfragment extends Fragment implements AdapterView.OnItemSelectedListener {//implements View.OnClickListener
     private ArrayAdapter<CharSequence> adapter;
-    private FragmentMainfragmentBinding fragmentMainfragmentBinding;
-
-
+    private OrderViewModel orderViewModelPr;
+    public FragmentMainfragmentBinding binding;
 
     public Mainfragment() {
         // Required empty public constructor
@@ -39,23 +40,32 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_mainfragment, container, false);
-        fragmentMainfragmentBinding = FragmentMainfragmentBinding.inflate(inflater, container, false);
         Spinner spinner = view.findViewById(R.id.spinner);
         adapter = ArrayAdapter.createFromResource(requireActivity().getApplicationContext(), R.array.grades, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
-        return fragmentMainfragmentBinding.getRoot();
+        orderViewModelPr = new ViewModelProvider(requireActivity()).get(OrderViewModel.class);
+        binding = FragmentMainfragmentBinding.inflate(inflater, container, false);
+        binding.setViewModelPr(orderViewModelPr);
+        binding.setLifecycleOwner(this);
+        return binding.getRoot();
     }
 
     public void Buttons(int number){
         if(number == 1){
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_elementaryschoolmath);
+            // here
         } else if (number == 2) {
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_elementarySchoolRussian);
-        } else if (number == 5) {
+        } else if (number == 3) {
+            Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_elementarySchoolEnglish);
+        } else if (number == 4) {
+            Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_elementarySchoolInformatics);
+        }else if (number == 5) {
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_averageScore);
         } else if (number == 6) {
             Navigation.findNavController(requireView()).navigate(R.id.action_mainfragment_to_historyOfScore);
@@ -66,18 +76,18 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        fragmentMainfragmentBinding.btnMath.setOnClickListener(view1 -> Buttons(1));
-        fragmentMainfragmentBinding.btnRussian.setOnClickListener(view2 -> Buttons(2));
-        fragmentMainfragmentBinding.btnEnglish.setOnClickListener(view3 -> Buttons(3));
-        fragmentMainfragmentBinding.btnInformatics.setOnClickListener(view4 -> Buttons(4));
-        fragmentMainfragmentBinding.btncount.setOnClickListener(view5 -> Buttons(5));
-        fragmentMainfragmentBinding.btnresultcount.setOnClickListener(view6 -> Buttons(6));
-        fragmentMainfragmentBinding.imageButton16.setOnClickListener(view6 -> Buttons(7));
+        binding.btnMath.setOnClickListener(view1 -> Buttons(1));
+        binding.btnRussian.setOnClickListener(view2 -> Buttons(2));
+        binding.btnEnglish.setOnClickListener(view3 -> Buttons(3));
+        binding.btnInformatics.setOnClickListener(view4 -> Buttons(4));
+        binding.btncount.setOnClickListener(view5 -> Buttons(5));
+        binding.btnresultcount.setOnClickListener(view6 -> Buttons(6));
+        binding.imageButton16.setOnClickListener(view6 -> Buttons(7));
     }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        fragmentMainfragmentBinding = null;
+        binding = null;
     }
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
