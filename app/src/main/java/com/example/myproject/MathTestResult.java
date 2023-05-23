@@ -80,7 +80,7 @@ public class MathTestResult extends Fragment {
         //sharedPreferences = PreferenceManager.getDefaultSharedPreferences(User);
         list = new ArrayList<>();
 
-        Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Успешно", Toast.LENGTH_SHORT).show();
         //Database.child("User").child(FirebaseAuth.getInstance().getUid()).child("answer").setValue(fragmentMathTestResultBinding.textView42.getText().toString());
     }
 

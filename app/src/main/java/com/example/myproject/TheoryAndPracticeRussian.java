@@ -17,13 +17,19 @@ import com.example.myproject.databinding.FragmentElementarySchoolRussianBinding;
 import com.example.myproject.databinding.FragmentTheoryAndPracticeRussianBinding;
 import com.example.myproject.databinding.TheoryandpracticeBinding;
 import com.example.myproject.model.OrderViewModel;
+import com.google.firebase.storage.FirebaseStorage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class TheoryAndPracticeRussian extends Fragment {
 
     public FragmentTheoryAndPracticeRussianBinding binding;
 
+    private FirebaseStorage storage = FirebaseStorage.getInstance("gs://myproject-74486.appspot.com");
     private OrderViewModel orderViewModelPr;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -81,14 +87,26 @@ public class TheoryAndPracticeRussian extends Fragment {
 
     String[] arr = {"З москва", "З казань", "З мария", "З ольга", "З волга", "З день рождения", "З новый год", "М девочка", "М игрушка", "М русский язык", "М декабрь", "М школа", "М море", "М математика", "М озеро", "З франция", "М телевизор", "З алексей", "М картина", "Мотец", "Мсова", "ЗКанада", "Зсказка о царе Салтане", "Мблины", "Мщётка", "Знижний новгород", "Звладимир", "Мтелефон", "Ммедведь", "Здень города", "Зроссия", "Мдневник", "Мэстофета", "Змальдивы", "Змихаил", "Мсоревнования", "Млитература", "Змосква-река", "Зпланета сатурн", "Марбуз", "Мдоктор", "Зока", "Зкремль"};
     Random yuy = new Random();
+    //ArrayList<String> arr = new ArrayList<>();
     int i = yuy.nextInt(arr.length);
 
+   /* public void fillingArrayList(){
+        File file = new File("gs://myproject-74486.appspot.com/ForApp.txt");
+        try (Scanner s = new Scanner(file).useDelimiter("\\s*, \\s*")) {
+            while (s.hasNext()) {
+                arr.add(s.next());
+            }
+        } catch (FileNotFoundException e) {
+        }
+        goToNextScreen(2);
+    }
+
+    */
     public void goToNextScreen(int n) {
         if (n == 2){
-            orderViewModelPr.set_number1(i);
+            orderViewModelPr.set_number1(i); // передаёт индекс слова для дальнейшей проверки ответа
             orderViewModelPr.set_stroke(arr[i].substring(1));
             Log.d("TXTB", "" + i + " " + arr[i]);
-            //Log.d("PPP", "! ВЫВОДИТСЯ: " + f.substring(1) + " ИСТИННАЯ СТРОКА " + arrel);
             Navigation.findNavController(requireView()).navigate(R.id.action_theoryAndPracticeRussian_to_russianPractice);
         } else{
             Navigation.findNavController(requireView()).navigate(R.id.action_theoryAndPracticeRussian_to_theoryRussian);

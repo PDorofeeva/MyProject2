@@ -50,8 +50,8 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
         spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         orderViewModelPr = new ViewModelProvider(requireActivity()).get(OrderViewModel.class);
         binding = FragmentMainfragmentBinding.inflate(inflater, container, false);
-        binding.setViewModelPr(orderViewModelPr);
-        binding.setLifecycleOwner(this);
+        //binding.setViewModelPr(orderViewModelPr);
+        //binding.setLifecycleOwner(this);
         return binding.getRoot();
     }
 

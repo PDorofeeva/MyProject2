@@ -14,12 +14,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myproject.databinding.FragmentAverageScoreBinding;
 import com.example.myproject.databinding.FragmentScoreAnswerBinding;
 import com.example.myproject.model.OrderViewModel;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class ScoreAnswer extends Fragment {
+    private DatabaseReference dataBase;
+    private TextView txtforanswer;
 
     public FragmentScoreAnswerBinding fragmentScoreAnswerBinding;
     private OrderViewModel orderViewModel;
@@ -62,6 +71,7 @@ public class ScoreAnswer extends Fragment {
         orderViewModel = new ViewModelProvider(requireActivity()).get(OrderViewModel.class);
         fragmentScoreAnswerBinding.setViewModel(orderViewModel);
         fragmentScoreAnswerBinding.setLifecycleOwner(this);
+
         //Log.d("RRR",number+"");
         // Inflate the layout for this fragment
         return fragmentScoreAnswerBinding.getRoot();
@@ -70,7 +80,24 @@ public class ScoreAnswer extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        txtforanswer = view.findViewById(R.id.txtforanswer);
         fragmentScoreAnswerBinding.imageButton5.setOnClickListener(view2 ->  goToBackScreen());
+        fragmentScoreAnswerBinding.imageButton8.setOnClickListener(view3 -> Save());
+    }
+
+    public void Save(){
+        dataBase = FirebaseDatabase.getInstance().getReference("UsersResults/");
+        String quantity = txtforanswer.getText().toString();
+        dataBase.child("UsersMarks").push().setValue(quantity).addOnSuccessListener(unused -> Log.d("TTT", "4321")).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("TTT", e.toString());
+            }
+        });
+
+
+        Toast.makeText(getActivity(), "Успешно", Toast.LENGTH_SHORT).show();
+        //Database.child("User").child(FirebaseAuth.getInstance().getUid()).child("answer").setValue(fragmentMathTestResultBinding.textView42.getText().toString());
     }
 
     public void goToBackScreen() {

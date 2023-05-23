@@ -10,11 +10,6 @@
     tools:layout_editor_absoluteY="1dp"
     android:fillViewport="true">
 
-    <data>
-        <variable
-            name="viewModelPr"
-            type="com.example.myproject.model.OrderViewModel" />
-    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

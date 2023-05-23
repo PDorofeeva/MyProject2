@@ -1,6 +1,7 @@
 package com.example.myproject;
 
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,7 +27,14 @@ import com.example.myproject.databinding.FragmentPractice1Binding;
 import com.example.myproject.databinding.FragmentRussianPracticeBinding;
 import com.example.myproject.databinding.FragmentTheoryAndPracticeRussianBinding;
 import com.example.myproject.model.OrderViewModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -42,8 +50,7 @@ public class RussianPractice extends Fragment {
     public SpannableStringBuilder builder;
     public TextView textView37, helper;
 
-    public Button button15, button10, btnPractice;
-    public TextView textView39;
+    public Button button15, button10;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -106,43 +113,43 @@ public class RussianPractice extends Fragment {
     int right = 0;
     String[] arr = {"Змосква", "Зказань", "Змария", "Зольга", "Зволга", "Здень рождения", "Зновый год", "Мдевочка", "Мигрушка", "Мрусский язык", "Мдекабрь", "Мшкола", "Мморе", "Мматематика", "Мозеро", "Зфранция", "Мтелевизор", "Залексей", "Мкартина", "Мотец", "Мсова", "ЗКанада", "Зсказка о царе Салтане", "Мблины", "Мщётка", "Знижний новгород", "Звладимир", "Мтелефон", "Ммедведь", "Здень города", "Зроссия", "Мдневник", "Мэстофета", "Змальдивы", "Змихаил", "Мсоревнования", "Млитература", "Змосква-река", "Зпланета сатурн", "Марбуз", "Мдоктор", "Зока", "Зкремль"};
 
+
+   //ArrayList<String> arr = new ArrayList<>();
+
     Random yuy = new Random();
 
     public void ForCapitalAndLittleLetter(int number){
+        /*
+        File file = new File("gs://myproject-74486.appspot.com/ForApp.txt");
+        try (Scanner s = new Scanner(file).useDelimiter("\\s*, \\s*")) {
+            while (s.hasNext()) {
+                arr.add(s.next());
+            }
+        } catch (FileNotFoundException e) {
+        }
+
+         */
         progressBar.setProgress(count);
         ForCapitalAndLittleLetter2(number);
+        //String word = arr[yuy.nextInt(arr.length)];
         String word = arr[yuy.nextInt(arr.length)];
-        SpannableString spn =new SpannableString(word);
+        SpannableString spn = new SpannableString(word);
         spn.setSpan(new ForegroundColorSpan(Color.parseColor("#211400")),
                 0,
                 1,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         textView37.setText(spn);
 
-        //Log.d("PPP", "Count" + count);
-        /*if (count == 1){
-
-            String answer = String.valueOf(a.charAt(0));
-            String c = String.valueOf(f.charAt(0));
-            if(answer.equals(c)){
-                right++;
-                count++;
-                Log.d("PPP", "Right: " + a + "First letter from a: " + answer + "First letter from arr[i]: " + c);
-            } else{ count++; }
-        } else {
-
-         */
-
-        //}
     }
 
     public void ForCapitalAndLittleLetter2(int number){
         String answer = "";
         if(count<=maxcount) {
             if (count == 1) {
-                String word = arr[Integer.parseInt(helper.getText().toString())];
+                String word = arr[Integer.parseInt(helper.getText().toString())]; //получает слово из поля view model - number1
+                //String word = arr.get(Integer.parseInt(helper.getText().toString()));
                 String wordFirstLetter = String.valueOf(word.charAt(0)); //Получение элемента
-                String g = textView37.getText().toString();
+                //String g = textView37.getText().toString();
                 if (number == 1) {
                     answer = button15.getText().toString();
                 }
@@ -187,28 +194,6 @@ public class RussianPractice extends Fragment {
 
 
 
-
-        /*String answer = "";
-        String f = arr[i];
-        char c = f.charAt(0);
-        String k = String.valueOf(c);
-        textView37.setText(f.substring(1));
-        if (number == 1) {
-            answer = button15.getText().toString();
-            Log.d("PPP", "Answer1 " + answer); //M
-        } else if (number == 2) {
-            answer = button10.getText().toString(); //3
-            Log.d("PPP", "Answer2 " + answer);
-        }
-        if (answer.equals(k)) {
-            right++;
-            count++;
-        } else {
-            count++;
-        }
-        Log.d("PPP", "Count:" + count + "Right:" + right + "CorrectAnswer:" + k);
-
-         */
     }
 
     public void showMeText(){

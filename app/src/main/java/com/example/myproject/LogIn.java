@@ -83,6 +83,7 @@ public class LogIn extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        logInBinding.exit.setOnClickListener(view1 -> GoToBackScreen());
         //first group
         container1 = view.findViewById(R.id.container2);
         password = view.findViewById(R.id.password);
@@ -132,41 +133,6 @@ public class LogIn extends Fragment {
             Toast.makeText(getActivity(), "Вы вышли из аккаунта", Toast.LENGTH_SHORT).show();
         });
 }
-/*
-
-        username = view.findViewById(R.id.username);
-        phone = view.findViewById(R.id.phone);
-
-        dataBase = FirebaseDatabase.getInstance().getReference(USER_KEY);
-        String id = dataBase.getKey();
-        logInBinding.login.setOnClickListener(v -> {
-            String name = username.getText().toString();
-            String telephone = phone.getText().toString();
-            String logInWord = password.getText().toString();
-            dataBase.child("User").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.hasChild(telephone)) {
-                        Toast.makeText(getActivity(), "Учётная запись уже существует", Toast.LENGTH_SHORT).show();
-                    } else {
-                        if (!TextUtils.isEmpty(name) || !TextUtils.isEmpty(telephone) || !TextUtils.isEmpty(logInWord)) {
-                            UserInfo User = new UserInfo(id, name, telephone, logInWord);
-                            dataBase.push().setValue(User);
-                            Navigation.findNavController(requireView()).navigate(R.id.action_logIn_to_mainfragment);
-                            Toast.makeText(getActivity(), "Учётная запись сохранена", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(getActivity(), "Заполните необходимые поля", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                }
-            });
-        });
-
- */
 
 
     public void GoToBackScreen(){
