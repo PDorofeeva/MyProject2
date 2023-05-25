@@ -21,11 +21,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/component_13"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
         <TextView
             android:id="@+id/textView48"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="124dp"
+            android:layout_marginTop="80dp"
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/secondfont"
             android:text="Ваш аккаунт"
@@ -40,7 +52,7 @@
             android:id="@+id/textView53"
             android:layout_width="87dp"
             android:layout_height="32dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="236dp"
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/secondfont"
             android:text="Email:"
@@ -55,7 +67,7 @@
         <TextView
             android:id="@+id/textView55"
             android:layout_width="383dp"
-            android:layout_height="147dp"
+            android:layout_height="136dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/secondfont"
@@ -65,7 +77,7 @@
             android:textSize="20sp"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView53" />
 
@@ -86,7 +98,7 @@
             android:id="@+id/imageButton11"
             android:layout_width="348dp"
             android:layout_height="104dp"
-            android:layout_marginTop="584dp"
+            android:layout_marginTop="568dp"
             android:backgroundTint="#00FFFFFF"
             android:src="@drawable/rectangle_7"
             android:visibility="visible"
@@ -122,6 +134,29 @@
             app:layout_constraintEnd_toEndOf="@+id/imageButton11"
             app:layout_constraintStart_toStartOf="@+id/imageButton11"
             app:layout_constraintTop_toTopOf="@+id/imageButton11" />
+
+        <Button
+            android:id="@+id/choosing"
+            android:layout_width="135dp"
+            android:layout_height="138dp"
+            android:backgroundTint="#00FFFFFF"
+            android:stateListAnimator="@null"
+            app:cornerRadius="60sp"
+            app:layout_constraintEnd_toEndOf="@+id/profile_image"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toTopOf="@+id/profile_image" />
+
+        <Button
+            android:id="@+id/button23"
+            android:layout_width="136dp"
+            android:layout_height="42dp"
+            android:backgroundTint="#00FFFFFF"
+            android:text="Сохранить"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/profile_image"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

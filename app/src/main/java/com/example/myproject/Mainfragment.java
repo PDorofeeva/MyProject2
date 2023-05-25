@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -12,30 +11,36 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.myproject.databinding.FragmentMainfragmentBinding;
 import com.example.myproject.databinding.FragmentMathTestResultBinding;
-import com.example.myproject.databinding.FragmentRussianTestResultsBinding;
 import com.example.myproject.model.OrderViewModel;
-
-import java.util.Objects;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 public class Mainfragment extends Fragment implements AdapterView.OnItemSelectedListener {//implements View.OnClickListener
     private ArrayAdapter<CharSequence> adapter;
     private OrderViewModel orderViewModelPr;
     public FragmentMainfragmentBinding binding;
+    private ImageView profileimage;
 
+    private FirebaseAuth auth;
+    private DatabaseReference dataBase;
     public Mainfragment() {
         // Required empty public constructor
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
              super.onCreate(savedInstanceState);
+             //ShowImg();
     }
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -76,6 +81,7 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        profileimage = view.findViewById(R.id.profile_image);
         binding.btnMath.setOnClickListener(view1 -> Buttons(1));
         binding.btnRussian.setOnClickListener(view2 -> Buttons(2));
         binding.btnEnglish.setOnClickListener(view3 -> Buttons(3));
@@ -83,7 +89,10 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
         binding.btncount.setOnClickListener(view5 -> Buttons(5));
         binding.btnresultcount.setOnClickListener(view6 -> Buttons(6));
         binding.imageButton16.setOnClickListener(view6 -> Buttons(7));
+
     }
+
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -97,8 +106,5 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
-    }
-    private void init(){ // Создание NavController
-        NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
     }
 }
