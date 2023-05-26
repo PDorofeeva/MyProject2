@@ -2,7 +2,9 @@ package com.example.myproject;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
@@ -48,6 +50,7 @@ import com.squareup.picasso.Picasso;
 import java.io.ByteArrayOutputStream;
 
 public class LogIn extends Fragment {
+    private SharedPreferences preferences;
     private DatabaseReference dataBase;
     private ConstraintLayout container1, container2;
     private ImageView img;
@@ -99,10 +102,11 @@ public class LogIn extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        storageReference = FirebaseStorage.getInstance().getReference("ProfileImages");
+        storageReference = FirebaseStorage.getInstance().getReference("ProfileImagePreference");
         logInBinding.exit.setOnClickListener(view1 -> GoToBackScreen());
         logInBinding.button23.setOnClickListener(view1 -> SaveImg());
         logInBinding.choosing.setOnClickListener(view2 -> ProfilePhoto());
+        preferences = getContext().getSharedPreferences("ImagePr", Context.MODE_PRIVATE);
         //first group
         container1 = view.findViewById(R.id.container2);
         password = view.findViewById(R.id.password);
@@ -195,6 +199,7 @@ public class LogIn extends Fragment {
 
     public void  SaveImg(){
         if(auth.getUid() != null && upuri != null){
+            SharedPreferences.Editor editor = preferences.edit();
             //dataBase = FirebaseDatabase.getInstance().getReference("UsersProfileImages/");
             UserInfo forImg = new UserInfo(upuri.toString(), auth.getUid());
             dataBase = FirebaseDatabase.getInstance().getReference("UsersProfileImages/"+ auth.getUid());
@@ -205,13 +210,16 @@ public class LogIn extends Fragment {
                     Log.d("TTT", e.toString());
                 }
             });
+            editor.putString("imageURI", upuri.toString());
+            editor.commit();
             Toast.makeText(getActivity(), "Успешно", Toast.LENGTH_SHORT).show();
             ShowImage();
         }
     }
 
     public void ShowImage(){
-        Picasso.get().load(upuri).into(img);
+        Uri here = Uri.parse(preferences.getString("imageURI", ""));
+        Picasso.get().load(here).into(img);
     }
 
     public void GoToBackScreen(){

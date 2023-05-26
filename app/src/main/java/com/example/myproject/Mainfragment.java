@@ -1,5 +1,9 @@
 package com.example.myproject;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -30,17 +34,15 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
     private ArrayAdapter<CharSequence> adapter;
     private OrderViewModel orderViewModelPr;
     public FragmentMainfragmentBinding binding;
-    private ImageView profileimage;
-
     private FirebaseAuth auth;
-    private DatabaseReference dataBase;
+    private ImageView profileimage;
+    SharedPreferences preferences;
     public Mainfragment() {
         // Required empty public constructor
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
              super.onCreate(savedInstanceState);
-             //ShowImg();
     }
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -81,6 +83,7 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        auth = FirebaseAuth.getInstance();
         profileimage = view.findViewById(R.id.profile_image);
         binding.btnMath.setOnClickListener(view1 -> Buttons(1));
         binding.btnRussian.setOnClickListener(view2 -> Buttons(2));
@@ -89,6 +92,14 @@ public class Mainfragment extends Fragment implements AdapterView.OnItemSelected
         binding.btncount.setOnClickListener(view5 -> Buttons(5));
         binding.btnresultcount.setOnClickListener(view6 -> Buttons(6));
         binding.imageButton16.setOnClickListener(view6 -> Buttons(7));
+        if(auth.getCurrentUser() != null) {
+            preferences = getContext().getSharedPreferences("ImagePr", Context.MODE_PRIVATE);
+            Uri uri = Uri.parse(preferences.getString("imageURI", ""));
+            Picasso.get().load(uri).into(profileimage);
+        } else {
+            profileimage.setImageResource(R.drawable.ellipse_9__1_);
+        }
+
 
     }
 
